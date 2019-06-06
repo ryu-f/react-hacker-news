@@ -13,7 +13,14 @@
     "noFallthroughCasesInSwitch": true,
     "strictFunctionTypes": false,
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "rootDir": "src",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["src/*"],
+      "@": ["src"]
+    },
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [

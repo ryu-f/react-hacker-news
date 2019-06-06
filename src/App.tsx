@@ -1,10 +1,12 @@
 import React from 'react'
 import { GlobalStyle } from './styles'
+import BasicText from '@/componets/atoms/BasicText'
 
 const App: React.FC = () => (
-  <GlobalStyle>
-    <div>test</div>
-  </GlobalStyle>
+  <React.Fragment>
+    <GlobalStyle />
+    <BasicText size={'SMALL'}>hoge</BasicText>
+  </React.Fragment>
 )
 
 export default App
