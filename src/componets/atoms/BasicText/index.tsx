@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 import { FONT_SIZE, COLOR } from '@/styles/Constants'
 
@@ -9,7 +9,9 @@ type Props = {
 }
 
 const BasicText: React.FC<Props> = ({ children, size, color }) => (
-  <Component size={size} color={color}>{ children }</Component>
+  <Component size={size} color={color}>
+    {children}
+  </Component>
 )
 
 const Component = styled.p`

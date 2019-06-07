@@ -5,7 +5,4 @@ import App from './App'
 
 const { TypelessProvider } = initialize()
 
-ReactDOM.render(
-  <App />
-,
-document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))

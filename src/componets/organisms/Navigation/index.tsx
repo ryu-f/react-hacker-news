@@ -1,15 +1,17 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 import BasicText from '@/componets/atoms/BasicText'
 
 type Props = {
-  listItem: { text: string, link: string }[]
+  listItem: { text: string; link: string }[]
 }
 
 const Navigation: React.FC<Props> = ({ listItem }) => (
   <Wrapper>
-    {listItem.map((el) => (
-      <BasicText size={'BASE'} color={'WHITE'}>{ el.text }</BasicText>
+    {listItem.map(el => (
+      <BasicText size={'BASE'} color={'WHITE'}>
+        {el.text}
+      </BasicText>
     ))}
   </Wrapper>
 )

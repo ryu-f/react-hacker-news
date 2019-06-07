@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 
 export const ResetStyle = css`
-html,
+  html,
   body,
   div,
   span,

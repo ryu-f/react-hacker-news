@@ -1,6 +1,6 @@
 /**
-* font-size
-*/
+ * font-size
+ */
 export const FONT_SIZE = {
   BASE: 16,
   SMALL: 14,
@@ -8,8 +8,8 @@ export const FONT_SIZE = {
 }
 
 /**
-* COLOR
-*/
+ * COLOR
+ */
 export const COLOR = {
   WHITE: '#fff'
 }
