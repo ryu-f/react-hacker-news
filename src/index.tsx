@@ -1,8 +1,15 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { initialize } from 'typeless'
+import { RouterProvider } from 'react-router5'
+import { configureRouter } from '@/routes/configureRouter'
 import App from './App'
 
-const { TypelessProvider } = initialize()
+const router = configureRouter()
 
-ReactDOM.render(<App />, document.getElementById('root'))
+router.start()
+
+ReactDOM.render(
+  <RouterProvider router={router}>
+    <App />
+  </RouterProvider>,
+document.getElementById('root'))

@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import BasicText from '@/componets/atoms/BasicText'
 
 type Props = {
-  listItem: { text: string; link: string }[]
+  navItem: { text: string; path: string }[]
 }
 
-const Navigation: React.FC<Props> = ({ listItem }) => (
+const Navigation: React.FC<Props> = ({ navItem }) => (
   <Wrapper>
-    {listItem.map((el, i) => (
+    {navItem.map((el, i) => (
       <BasicText size={'BASE'} color={'WHITE'} key={i}>
         {el.text}
       </BasicText>

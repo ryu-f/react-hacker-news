@@ -1,27 +1,14 @@
 import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import { GlobalStyle } from './styles'
+import { navItem } from '@/data/navItem'
 import Navigation from '@/componets/organisms/Navigation'
 
-const listItem = [
-  {
-    text: 'NEW',
-    link: '/new/'
-  },
-  {
-    text: 'ASK',
-    link: '/ask/'
-  },
-  {
-    text: 'JOB',
-    link: '/job/'
-  }
-]
 
 const App: React.FC = () => (
   <React.Fragment>
     <GlobalStyle />
-    <Navigation listItem={listItem} />
+    <Navigation navItem={navItem} />
   </React.Fragment>
 )
 
