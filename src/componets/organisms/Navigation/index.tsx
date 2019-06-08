@@ -8,8 +8,8 @@ type Props = {
 
 const Navigation: React.FC<Props> = ({ listItem }) => (
   <Wrapper>
-    {listItem.map(el => (
-      <BasicText size={'BASE'} color={'WHITE'}>
+    {listItem.map((el, i) => (
+      <BasicText size={'BASE'} color={'WHITE'} key={i}>
         {el.text}
       </BasicText>
     ))}

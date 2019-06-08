@@ -1,19 +1,19 @@
 import React from 'react'
+import { hot } from 'react-hot-loader/root'
 import { GlobalStyle } from './styles'
 import Navigation from '@/componets/organisms/Navigation'
-import BasicText from '@/componets/atoms/BasicText'
 
 const listItem = [
   {
-    text: 'new',
+    text: 'NEW',
     link: '/new/'
   },
   {
-    text: 'ask',
+    text: 'ASK',
     link: '/ask/'
   },
   {
-    text: 'job',
+    text: 'JOB',
     link: '/job/'
   }
 ]
@@ -25,4 +25,4 @@ const App: React.FC = () => (
   </React.Fragment>
 )
 
-export default App
+export default hot(App)

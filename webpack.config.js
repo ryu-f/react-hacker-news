@@ -28,7 +28,8 @@ module.exports = () => {
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.json'],
       alias: {
-        '@': path.resolve(__dirname, 'src')
+        '@': path.resolve(__dirname, 'src'),
+        'react-dom': '@hot-loader/react-dom'
       }
     },
 
@@ -56,7 +57,7 @@ module.exports = () => {
       hot: true,
       hotOnly: true,
       historyApiFallback: true,
-      contentBase: 'src/static/'
+      contentBase: path.join(__dirname, './dist')
     },
 
     plugins: [

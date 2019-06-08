@@ -14,9 +14,9 @@ const BasicText: React.FC<Props> = ({ children, size, color }) => (
   </Component>
 )
 
-const Component = styled.p`
-  font-size: ${(props: Props) => FONT_SIZE[props.size]}px;
-  color: ${(props: Props) => COLOR[props.color]};
+const Component = styled.p<Props>`
+  font-size: ${props => FONT_SIZE[props.size]}px;
+  color: ${props => COLOR[props.color]};
 `
 
 export default BasicText
