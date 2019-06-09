@@ -4,7 +4,6 @@ import { GlobalStyle } from './styles'
 import { navItem } from '@/data/navItem'
 import Navigation from '@/componets/organisms/Navigation'
 
-
 const App: React.FC = () => (
   <React.Fragment>
     <GlobalStyle />

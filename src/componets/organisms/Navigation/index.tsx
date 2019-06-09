@@ -7,7 +7,6 @@ type Props = {
 }
 
 const Navigation: React.FC<Props> = ({ navItem }) => {
-
   return (
     <Wrapper>
       {navItem.map((el, i) => (
