@@ -57,7 +57,7 @@ module.exports = () => {
       hot: true,
       hotOnly: true,
       historyApiFallback: true,
-      contentBase: path.join(__dirname, './dist')
+      contentBase: [path.join(__dirname, './dist'), path.join(__dirname, './src/static')]
     },
 
     plugins: [

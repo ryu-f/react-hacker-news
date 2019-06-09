@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --mode development",
+    "build": "npm-run-all del:dist copy:static webpack:production",
+    "fix": "eslint --fix '**/*.ts{,x}'",
+    "webpack:production": "webpack --mode production",
     "lint:ts": "eslint '**/*.ts{,x}'",
     "lint:css": "stylelint --fix '**/*.ts{,x}'",
-    "fix": "eslint --fix '**/*.ts{,x}'",
-    "dev": "webpack-dev-server --mode development --hot --open",
-    "build": "webpack --mode production"
+    "copy:static": "cpx './src/static/**/*' './dist'",
+    "del:dist": "rimraf './dist'"
   },
   "repository": {
     "type": "git",
@@ -44,6 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "@typescript-eslint/typescript-estree": "^1.9.0",
+    "cpx": "^1.5.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-jest": "^22.6.4",
@@ -61,6 +65,7 @@
     "progress-bar-webpack-plugin": "^1.12.1",
     "react-hot-loader": "^4.9.0",
     "react-testing-library": "^8.0.1",
+    "rimraf": "^2.6.3",
     "stylelint": "^10.0.1",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-standard": "^18.3.0",
