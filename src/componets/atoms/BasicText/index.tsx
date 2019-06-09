@@ -5,7 +5,7 @@ import { FONT_SIZE, COLOR } from '@/styles/Constants'
 type Props = {
   children: string | React.ReactChild
   size: 'BASE' | 'SMALL' | 'LARGE'
-  color: 'WHITE'
+  color: 'BLACK' | 'WHITE'
 }
 
 const BasicText: React.FC<Props> = ({ children, size, color }) => (
@@ -15,8 +15,8 @@ const BasicText: React.FC<Props> = ({ children, size, color }) => (
 )
 
 const Component = styled.p<Props>`
-  font-size: ${props => FONT_SIZE[props.size]}px;
-  color: ${props => COLOR[props.color]};
+  font-size: ${({ size }) => FONT_SIZE[size]}px;
+  color: ${({ color }) => COLOR[color]};
 `
 
 export default BasicText
