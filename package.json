@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryu-f/private_portfolio.git"
+    "url": "git+https://github.com/ryu-f/react-hacker-news.git"
   },
   "keywords": [],
   "author": "ryu.furuta",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ryu-f/private_portfolio/issues"
+    "url": "https://github.com/ryu-f/react-hacker-news/issues"
   },
-  "homepage": "https://github.com/ryu-f/private_portfolio#readme",
+  "homepage": "https://github.com/ryu-f/react-hacker-news#readme",
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
