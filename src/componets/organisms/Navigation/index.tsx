@@ -1,20 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 import BasicText from '@/componets/atoms/BasicText'
+import { Link } from 'react-router5'
 
 type Props = {
   navItem: { text: string; path: string }[]
+  router: any
 }
 
-const Navigation: React.FC<Props> = ({ navItem }) => (
-  <Wrapper>
-    {navItem.map((el, i) => (
-      <BasicText size={'BASE'} color={'WHITE'} key={i}>
-        {el.text}
-      </BasicText>
-    ))}
-  </Wrapper>
-)
+const Navigation: React.FC<Props> = ({ navItem }) => {
+
+  return (
+    <Wrapper>
+      {navItem.map((el, i) => (
+        <Link routeName='/ask/' key={i}>
+          <BasicText size={'BASE'} color={'WHITE'}>
+            {el.text}
+          </BasicText>
+        </Link>
+      ))}
+    </Wrapper>
+  )
+}
 
 const Wrapper = styled.nav`
   display: flex;

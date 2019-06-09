@@ -6,10 +6,11 @@ import App from './App'
 
 const router = configureRouter()
 
-router.start()
+router.start(() =>
+  ReactDOM.render(
+    <RouterProvider router={router}>
+      <App />
+    </RouterProvider>,
+  document.getElementById('root'))
+)
 
-ReactDOM.render(
-  <RouterProvider router={router}>
-    <App />
-  </RouterProvider>,
-document.getElementById('root'))
