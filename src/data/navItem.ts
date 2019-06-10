@@ -4,8 +4,16 @@ export const navItem = [
     path: '/new/'
   },
   {
+    text: 'BEST',
+    path: '/best/'
+  },
+  {
     text: 'ASK',
     path: '/ask/'
+  },
+  {
+    text: 'SHOW',
+    path: '/show/'
   },
   {
     text: 'JOB',
