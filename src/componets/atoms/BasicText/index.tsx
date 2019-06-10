@@ -8,7 +8,7 @@ type Props = {
   color: 'BLACK' | 'WHITE'
 }
 
-const BasicText: React.FC<Props> = ({ children, size, color }) => (
+const BasicText: React.SFC<Props> = ({ children, size, color }) => (
   <Component size={size} color={color}>
     {children}
   </Component>

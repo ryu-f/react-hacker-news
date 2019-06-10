@@ -89,6 +89,7 @@ export const ResetStyle = css`
     font-size: inherit;
     vertical-align: baseline;
   }
+
   article,
   aside,
   details,
@@ -102,17 +103,21 @@ export const ResetStyle = css`
   section {
     display: block;
   }
+
   body {
     line-height: 1;
   }
+
   ol,
   ul {
     list-style: none;
   }
+
   blockquote,
   q {
     quotes: none;
   }
+
   blockquote::before,
   blockquote::after,
   q::before,
@@ -120,19 +125,24 @@ export const ResetStyle = css`
     content: '';
     content: none;
   }
+
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
+
   button {
     outline: none;
   }
+
   input {
     outline: none;
   }
+
   select {
     outline: none;
   }
+
   a {
     text-decoration: none;
   }

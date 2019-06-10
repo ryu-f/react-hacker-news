@@ -11,7 +11,7 @@ type Props = {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const BasicButton: React.FC<Props> = ({ width, height, size, color, children, onClick }) => (
+const BasicButton: React.SFC<Props> = ({ width, height, size, color, children, onClick }) => (
   <Component width={width} height={height} size={size} color={color} onClick={onClick}>
     {children}
   </Component>

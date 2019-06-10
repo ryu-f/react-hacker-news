@@ -11,7 +11,8 @@
     "lint:ts": "eslint '**/*.ts{,x}'",
     "lint:css": "stylelint --fix '**/*.ts{,x}'",
     "copy:static": "cpx './src/static/**/*' './dist'",
-    "del:dist": "rimraf './dist'"
+    "del:dist": "rimraf './dist'",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,13 @@
     "url": "https://github.com/ryu-f/react-hacker-news/issues"
   },
   "homepage": "https://github.com/ryu-f/react-hacker-news#readme",
+  "lint-staged": {
+    "*.ts{,x}": [
+      "npm run fix",
+      "npm run lint:css",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
