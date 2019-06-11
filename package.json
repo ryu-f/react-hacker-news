@@ -11,8 +11,7 @@
     "lint:ts": "eslint '**/*.ts{,x}'",
     "lint:css": "stylelint --fix '**/*.ts{,x}'",
     "copy:static": "cpx './src/static/**/*' './dist'",
-    "del:dist": "rimraf './dist'",
-    "precommit": "lint-staged"
+    "del:dist": "rimraf './dist'"
   },
   "repository": {
     "type": "git",
@@ -85,5 +84,10 @@
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.5.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
