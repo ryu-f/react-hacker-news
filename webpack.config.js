@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 module.exports = () => {
   return {
@@ -61,6 +62,7 @@ module.exports = () => {
 
     plugins: [
       new ProgressBarPlugin(),
+      new ForkTsCheckerWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: path.resolve('src/templates', 'index.html')
       })

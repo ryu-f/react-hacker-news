@@ -17,6 +17,7 @@
     "baseUrl": "./",
     "rootDir": "src",
     "outDir": "./dist",
+    "types": ["react", "jest"], // for styled-components
     "paths": {
       "@/*": ["src/*"],
       "@": ["src"]
