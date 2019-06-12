@@ -5,6 +5,7 @@
     "jsx": "react",
     "lib": ["esnext", "dom"],
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "removeComments": true,
     "strict": true,
     "noUnusedLocals": true,
@@ -12,12 +13,10 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "strictFunctionTypes": false,
-    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "baseUrl": "./",
     "rootDir": "src",
     "outDir": "./dist",
-    "types": ["react", "jest"], // for styled-components
     "paths": {
       "@/*": ["src/*"],
       "@": ["src"]

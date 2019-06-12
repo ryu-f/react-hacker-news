@@ -31,6 +31,11 @@
       "git add"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
@@ -42,16 +47,16 @@
     "redux": "^4.0.1",
     "rxjs": "^6.5.2",
     "styled-components": "^4.3.1",
-    "typeless": "0.0.20"
+    "typeless": "1.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
-    "@hot-loader/react-dom": "^16.8.6",
     "@testing-library/react": "^8.0.1",
     "@types/jest": "^24.0.13",
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
-    "@types/styled-components": "^4.1.15",
+    "@types/styled-components": "^4.1.16",
+    "@types/webpack-env": "^1.13.9",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "@typescript-eslint/typescript-estree": "^1.9.0",
@@ -71,7 +76,6 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
     "progress-bar-webpack-plugin": "^1.12.1",
-    "react-hot-loader": "^4.9.0",
     "rimraf": "^2.6.3",
     "stylelint": "^10.0.1",
     "stylelint-config-prettier": "^5.2.0",
@@ -85,10 +89,5 @@
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.5.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
