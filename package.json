@@ -47,7 +47,8 @@
     "redux": "^4.0.1",
     "rxjs": "^6.5.2",
     "styled-components": "^4.3.1",
-    "typeless": "1.1.0"
+    "typeless": "1.1.0",
+    "typeless-router": "^1.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
