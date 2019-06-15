@@ -45,7 +45,6 @@
     "babel-loader": "^8.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "redux": "^4.0.1",
     "rxjs": "^6.5.2",
     "styled-components": "^4.3.1",
     "typeless": "1.1.0",
