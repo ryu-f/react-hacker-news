@@ -1,17 +1,25 @@
-import { ajax } from 'rxjs/ajax'
-import { map, catchError } from 'rxjs/operators'
+import { fromFetch } from 'rxjs/fetch'
+import { switchMap, catchError } from 'rxjs/operators'
 
 const apiRoot = 'https://api.hnpwa.com/v0/'
 
 export default {
   get(url: string, config = {}) {
-    return ajax({
+    const data$ = fromFetch(`${apiRoot}${url}`, {
       method: 'GET',
-      url: `${apiRoot}${url}`,
       ...config
     }).pipe(
-      map(response => response),
-      catchError(error => error)
+      switchMap(response => {
+        return response.json()
+      }),
+      catchError(error => {
+        return error
+      })
     )
+
+    return data$.subscribe({
+      next: result => result,
+      complete: () => console.log('done')
+    })
   }
 }
