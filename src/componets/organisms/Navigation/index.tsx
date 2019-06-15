@@ -2,31 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 import BasicText from '@/componets/atoms/BasicText'
 import { Link } from 'typeless-router'
-import { useRouter } from '@/features/router'
 
 type Props = {
   navItem: { text: string; path: string }[]
 }
 
-const Navigation: React.FC<Props> = ({ navItem }) => {
-  useRouter()
-
-  return (
-    <Wrapper>
-      <List>
-        {navItem.map((el, i) => (
-          <Item key={i}>
-            <Link href={el.path}>
-              <BasicText size={'BASE'} color={'WHITE'}>
-                {el.text}
-              </BasicText>
-            </Link>
-          </Item>
-        ))}
-      </List>
-    </Wrapper>
-  )
-}
+const Navigation: React.FC<Props> = ({ navItem }) => (
+  <Wrapper>
+    <List>
+      {navItem.map((el, i) => (
+        <li key={i}>
+          <Link href={el.path}>
+            <BasicText size={'BASE'} color={'WHITE'}>
+              {el.text}
+            </BasicText>
+          </Link>
+        </li>
+      ))}
+    </List>
+  </Wrapper>
+)
 
 const Wrapper = styled.nav`
   display: flex;
@@ -39,13 +34,9 @@ const Wrapper = styled.nav`
 `
 
 const List = styled.ul`
-  width: 550px;
+  min-width: 550px;
   display: flex;
   justify-content: space-around;
-`
-
-const Item = styled.li`
-  display: block;
 `
 
 export default Navigation
