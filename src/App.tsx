@@ -3,13 +3,11 @@ import { GlobalStyle } from './styles'
 import { navItem } from '@/data/navItem'
 import Navigation from '@/componets/organisms/Navigation'
 import { useRouter } from '@/features/router'
-import getFeeds from '@/api/getFeerds'
+import { useFeedModule } from '@/features/feed/module'
 
 const App: React.FC = () => {
   useRouter()
-  // @ts-ignore
-  const res = getFeeds({ type: 'news', page: 1 })
-  console.log(res)
+  useFeedModule()
 
   return (
     <React.Fragment>
