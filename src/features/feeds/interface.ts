@@ -11,5 +11,5 @@ export interface FeedsState {
   item: Item
   user: User
   type: 'news' | 'newset' | 'ask' | 'show' | 'jobs' | 'item' | 'user'
-  paging: number
+  page: number
 }
