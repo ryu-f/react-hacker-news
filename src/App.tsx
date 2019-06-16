@@ -1,16 +1,23 @@
 import React from 'react'
 import { GlobalStyle } from './styles'
 import { useRouter } from '@/features/router'
-import { NavigationModule } from '@/features/feed/module'
+import { useFeedModule } from '@/features/feed/module'
+
+const NavigationView = React.lazy(() => import('@/features/feed/components/NavigationView'))
+const ArticleView = React.lazy(() => import('@/features/feed/components/ArticleView'))
 
 const App: React.FC = () => {
   useRouter()
+  useFeedModule()
 
   return (
-    <React.Fragment>
-      <NavigationModule />
+    <>
       <GlobalStyle />
-    </React.Fragment>
+      <React.Suspense fallback={<span></span>}>
+        <NavigationView />
+        <ArticleView />
+      </React.Suspense>
+    </>
   )
 }
 

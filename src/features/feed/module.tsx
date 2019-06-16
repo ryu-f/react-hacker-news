@@ -1,8 +1,6 @@
-import React from 'react'
 import * as Rx from 'typeless/rx'
 import getFeed from '@/api/getFeed'
 import { FeedActions, FeedState, getFeedState, handle } from './interface'
-import NavigationView from '@/features/feed/components/NavigationView'
 
 // --- Epic ---
 handle.epic().on(FeedActions.$mounted, () => {
@@ -33,7 +31,5 @@ handle
     state.page = page
   })
 
-export const NavigationModule = () => {
-  handle()
-  return <NavigationView />
-}
+// --- Module ---
+export const useFeedModule = () => handle()
