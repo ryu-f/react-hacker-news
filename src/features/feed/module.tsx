@@ -1,6 +1,8 @@
+import React from 'react'
 import * as Rx from 'typeless/rx'
 import getFeed from '@/api/getFeed'
 import { FeedActions, FeedState, getFeedState, handle } from './interface'
+import NavigationView from '@/features/feed/components/NavigationView'
 
 // --- Epic ---
 handle.epic().on(FeedActions.$mounted, () => {
@@ -19,7 +21,7 @@ const initialState: FeedState = {
   page: 1
 }
 
-export const reducer = handle
+handle
   .reducer(initialState)
   .on(FeedActions.pushFeedItems, (state, { feedItems }) => {
     state.feedItems = feedItems
@@ -31,4 +33,7 @@ export const reducer = handle
     state.page = page
   })
 
-export const useFeedModule = handle
+export const NavigationModule = () => {
+  handle()
+  return <NavigationView />
+}

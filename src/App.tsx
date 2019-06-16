@@ -1,18 +1,15 @@
 import React from 'react'
 import { GlobalStyle } from './styles'
-import { navItem } from '@/data/navItem'
-import Navigation from '@/componets/organisms/Navigation'
 import { useRouter } from '@/features/router'
-import { useFeedModule } from '@/features/feed/module'
+import { NavigationModule } from '@/features/feed/module'
 
 const App: React.FC = () => {
   useRouter()
-  useFeedModule()
 
   return (
     <React.Fragment>
+      <NavigationModule />
       <GlobalStyle />
-      <Navigation navItem={navItem} />
     </React.Fragment>
   )
 }

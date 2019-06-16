@@ -2,8 +2,6 @@ import { createModule } from 'typeless'
 import { FeedSymbol } from './symbol'
 import { FeedItem } from '@/types'
 
-export const MODULE = 'feed'
-
 export const [handle, FeedActions, getFeedState] = createModule(FeedSymbol)
   .withActions({
     $mounted: null,

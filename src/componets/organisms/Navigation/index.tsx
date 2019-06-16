@@ -5,13 +5,14 @@ import { Link } from 'typeless-router'
 
 type Props = {
   navItem: { text: string; path: string }[]
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-const Navigation: React.FC<Props> = ({ navItem }) => (
+const Navigation: React.FC<Props> = ({ navItem, onClick }) => (
   <Wrapper>
     <List>
       {navItem.map((el, i) => (
-        <li key={i}>
+        <li key={i} onClick={onClick}>
           <Link href={el.path}>
             <BasicText size={'BASE'} color={'WHITE'}>
               {el.text}
