@@ -12,5 +12,5 @@ module.exports = {
     '@babel/preset-react',
     '@babel/preset-typescript'
   ],
-  plugins: ['@babel/plugin-syntax-dynamic-import']
+  plugins: ['babel-plugin-styled-components', '@babel/plugin-syntax-dynamic-import']
 }
