@@ -1,24 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import BasicText from '@/componets/atoms/BasicText'
-import { Link } from 'typeless-router'
 
 type Props = {
-  navItem: { text: string; path: string }[]
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  navItem: { text: string; path: string; type: string }[]
+  onClick: (event: React.MouseEvent<HTMLElement>, index: number) => void
 }
 
 const Navigation: React.FC<Props> = ({ navItem, onClick }) => (
   <Wrapper>
     <List>
       {navItem.map((el, i) => (
-        <li key={i} onClick={onClick}>
-          <Link href={el.path}>
-            <BasicText size={'BASE'} color={'WHITE'}>
-              {el.text}
-            </BasicText>
-          </Link>
-        </li>
+        <Item key={i} onClick={e => onClick(e, i)}>
+          <BasicText size={'BASE'} color={'WHITE'}>
+            {el.text}
+          </BasicText>
+        </Item>
       ))}
     </List>
   </Wrapper>
@@ -38,6 +35,10 @@ const List = styled.ul`
   min-width: 550px;
   display: flex;
   justify-content: space-around;
+`
+
+const Item = styled.li`
+  cursor: pointer;
 `
 
 export default Navigation

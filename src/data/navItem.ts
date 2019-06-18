@@ -1,22 +1,27 @@
 export const navItem = [
   {
     text: 'News',
-    path: '/news/'
+    path: '/news/',
+    type: 'news'
   },
   {
     text: 'Newest',
-    path: '/newset/'
+    path: '/newset/',
+    type: 'newset'
   },
   {
     text: 'Ask',
-    path: '/ask/'
+    path: '/ask/',
+    type: 'ask'
   },
   {
     text: 'Show',
-    path: '/show/'
+    path: '/show/',
+    type: 'show'
   },
   {
     text: 'Job',
-    path: '/job/'
+    path: '/job/',
+    type: 'job'
   }
 ]

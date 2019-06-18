@@ -1,5 +1,5 @@
 import * as Rx from 'typeless/rx'
-import getFeed from '@/api/getFeed'
+import getFeed from '@/services/api/getFeed'
 import { FeedActions, FeedState, getFeedState, handle } from './interface'
 
 // --- Epic ---
