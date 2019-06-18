@@ -8,6 +8,7 @@
     "build": "cross-env NODE_ENV=production npm-run-all del:dist copy:static webpack:production",
     "fix": "eslint --fix '**/*.ts{,x}'",
     "test": "jest",
+    "commit": "commit",
     "webpack:production": "webpack --mode production",
     "lint:ts": "eslint '**/*.ts{,x}'",
     "lint:css": "stylelint --fix '**/*.ts{,x}'",
@@ -21,21 +22,19 @@
   "keywords": [],
   "author": "ryu.furuta",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ryu-f/react-hacker-news/issues"
-  },
   "homepage": "https://github.com/ryu-f/react-hacker-news#readme",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.ts{,x}": [
       "npm run fix",
       "npm run lint:css",
       "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@babel/core": "^7.4.5",
@@ -55,6 +54,8 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/prompt-cli": "^8.0.0",
     "@testing-library/react": "^8.0.1",
     "@types/jest": "^24.0.13",
     "@types/react": "^16.8.19",
