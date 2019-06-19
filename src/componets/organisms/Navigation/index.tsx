@@ -7,7 +7,7 @@ type Props = {
   onClick: (event: React.MouseEvent<HTMLElement>, index: number) => void
 }
 
-const Navigation: React.FC<Props> = ({ navItem, onClick }) => (
+const Navigation: React.SFC<Props> = ({ navItem, onClick }) => (
   <Wrapper>
     <List>
       {navItem.map((el, i) => (
