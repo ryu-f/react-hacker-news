@@ -10,7 +10,7 @@ const ArticleView: React.FC = () => {
     <List>
       {feedItems.map((el, i) => (
         <ListItem key={i}>
-          <Card headLine={el.title} subTitle={el.user || 'not user'} bodyText={el.title} buttonText={el.title} />
+          <Card headLine={el.title} subTitle={el.user || 'not user'} buttonText={'MORE'} />
         </ListItem>
       ))}
     </List>
@@ -20,10 +20,16 @@ const ArticleView: React.FC = () => {
 const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
 `
 
 const ListItem = styled.li`
-  width: ${100 / 3}%;
+  width: ${100 / 3.2}%;
+
+  &:nth-child(n + 4) {
+    margin-top: 30px;
+  }
 `
 
 export default ArticleView
