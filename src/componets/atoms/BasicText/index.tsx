@@ -5,11 +5,12 @@ import { FONT_SIZE, COLOR } from '@/styles/Constants'
 type Props = {
   children: string | React.ReactChild
   size: 'BASE' | 'SMALL' | 'LARGE'
-  color: 'BLACK' | 'WHITE'
+  color: 'BLACK' | 'WHITE' | 'GLAY'
+  href?: string
 }
 
-const BasicText: React.SFC<Props> = ({ children, size, color }) => (
-  <Component size={size} color={color}>
+const BasicText: React.SFC<Props> = ({ children, size, color, href }) => (
+  <Component size={size} color={color} href={href}>
     {children}
   </Component>
 )

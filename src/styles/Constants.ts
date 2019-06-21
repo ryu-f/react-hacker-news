@@ -11,6 +11,7 @@ export const FONT_SIZE = {
  * COLOR
  */
 export const COLOR = {
-  BLACK: '#000',
-  WHITE: '#fff'
+  BLACK: 'rgb(0,0,0)',
+  WHITE: 'rgb(255, 255, 255)',
+  GLAY: 'rgba(0,0,0,0.54)'
 }

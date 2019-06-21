@@ -20,7 +20,7 @@ const Card: React.SFC<Props> = ({ headLine, subTitle, bodyText, buttonText }) =>
         )}
 
         {subTitle && (
-          <SubTitle size={'BASE'} color={'BLACK'}>
+          <SubTitle as="a" size={'BASE'} color={'GLAY'}>
             {subTitle}
           </SubTitle>
         )}

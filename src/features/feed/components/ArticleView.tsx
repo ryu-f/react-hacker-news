@@ -5,12 +5,13 @@ import Card from '@/componets/organisms/Card'
 
 const ArticleView: React.FC = () => {
   const { feedItems } = getFeedState.useState()
+  console.log(feedItems)
 
   return (
     <List>
       {feedItems.map((el, i) => (
         <ListItem key={i}>
-          <Card headLine={el.title} subTitle={el.user || 'not user'} buttonText={'MORE'} />
+          <Card headLine={el.title} subTitle={el.user || 'Not user'} buttonText={'READ'} />
         </ListItem>
       ))}
     </List>
