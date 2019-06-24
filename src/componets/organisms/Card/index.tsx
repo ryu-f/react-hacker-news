@@ -54,7 +54,8 @@ const HeadLine = styled(BasicText)`
   margin-top: 20px;
 `
 const SubTitle = styled(BasicText)`
-  margin-top: 20px;
+  display: block;
+  margin-top: 10px;
 `
 
 const BodyText = styled(BasicText)`

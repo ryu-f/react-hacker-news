@@ -5,7 +5,6 @@ import Card from '@/componets/organisms/Card'
 
 const ArticleView: React.FC = () => {
   const { feedItems } = getFeedState.useState()
-  console.log(feedItems)
 
   return (
     <List>
