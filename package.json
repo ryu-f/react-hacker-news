@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development",
     "build": "cross-env NODE_ENV=production npm-run-all del:dist copy:static webpack:production",
     "fix": "eslint --fix '**/*.ts{,x}'",
-    "test": "jest --coverage",
+    "test": "jest",
     "commit": "commit",
     "webpack:production": "webpack --mode production",
     "lint:ts": "eslint '**/*.ts{,x}'",

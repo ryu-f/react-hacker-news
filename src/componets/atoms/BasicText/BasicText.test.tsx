@@ -1,18 +1,18 @@
 import React from 'react'
-import BasicText from './index'
-import 'jest-dom/extend-expect'
 import { render } from '@testing-library/react'
+import 'jest-dom/extend-expect'
+import BasicText from './'
 
 const size = 'BASE'
 const color = 'BLACK'
 
 describe('BasicText', () => {
-  it('Show children text', () => {
+  test('renders BasicText with text', () => {
     const { getByText } = render(
       <BasicText size={size} color={color}>
         Test
       </BasicText>
     )
-    expect(getByText(/Test: \d+/)).toHaveTextContent('Test')
+    getByText('Test')
   })
 })
