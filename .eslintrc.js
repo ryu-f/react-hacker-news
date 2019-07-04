@@ -17,10 +17,11 @@ module.exports = {
     'browser': true
   },
   rules: {
-    'no-console': 'warn',
-    'react/jsx-no-target-blank': 'error',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'complexity': ['warn', 10],
     'react-hooks/rules-of-hooks': 'error',
+    'jest/no-disabled-tests': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'prettier/prettier': [
       'warn',
       {
