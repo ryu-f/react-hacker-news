@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import 'jest-dom/extend-expect'
-import BasicText from './'
+import BasicText from '.'
 
 const size = 'BASE'
 const color = 'BLACK'

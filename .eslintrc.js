@@ -13,8 +13,9 @@ module.exports = {
   extends: ['plugin:prettier/recommended'],
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jest'],
   env: {
-    'es6': true,
-    'browser': true
+    node: true,
+    jest: true,
+    browser: true,
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -33,5 +34,11 @@ module.exports = {
         trailingComma: 'none'
       }
     ]
+  },
+  globals: {
+    page: true,
+    browser: true,
+    context: true,
+    jestPuppeteer: true
   }
 }

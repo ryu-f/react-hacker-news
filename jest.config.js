@@ -1,10 +1,10 @@
 module.exports = {
-  testRegex: '/src/.*.test.(ts?|tsx?)$',
+  testMatch: ['<rootDir>/src/**/*.(spec|test).(ts|tsx)'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   moduleNameMapper: { '^@/(.*)$': '<rootDir>/src/$1' },
   setupFilesAfterEnv: ['@testing-library/react/cleanup-after-each'],
-  coverageDirectory: 'tests/unit/coverage',
+  coverageDirectory: '__tests__/unit/coverage',
   collectCoverageFrom: ['src/componets/**/*.tsx'],
   coverageReporters: ['html', 'text-summary'],
   preset: 'ts-jest',
