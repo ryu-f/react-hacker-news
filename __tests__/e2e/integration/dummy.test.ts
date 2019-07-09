@@ -1,9 +1,9 @@
-const path = require('path')
-const CONSTANTS = require('../config/constants')
+import path from 'path'
+import { CONSTANTS } from '../config/constants'
 
 describe('dummy', () => {
   beforeAll(async () => {
-    await page.goto('https://google.com', { waitUntil: CONSTANTS.NETWORK })
+    await page.goto('https://google.com', { waitUntil: CONSTANTS.NETWORK as any })
   })
 
   it('dummy', async () => {
