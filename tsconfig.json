@@ -16,7 +16,6 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": "./",
-    "rootDir": "src",
     "outDir": "./dist",
     "paths": {
       "@/*": ["src/*"],

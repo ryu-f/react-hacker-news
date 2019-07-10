@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { FONT_SIZE, COLOR } from '@/styles/Constants'
 
 type Props = {
-  children: string | React.ReactChild
   size: 'BASE' | 'SMALL' | 'LARGE'
   color: 'BLACK' | 'WHITE' | 'GLAY'
   href?: string
