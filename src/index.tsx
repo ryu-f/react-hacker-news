@@ -1,7 +1,7 @@
-import React from 'react'
+import * as React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { Hmr, startHmr, DefaultTypelessProvider } from 'typeless'
+import { hot } from 'react-hot-loader/root'
 
 const MOUNT_NODE = document.getElementById('root')
 
@@ -9,22 +9,6 @@ if (!MOUNT_NODE) {
   throw new Error('<div id="root" /> not found')
 }
 
-const render = () => {
-  ReactDOM.unmountComponentAtNode(MOUNT_NODE)
-  ReactDOM.render(
-    <Hmr>
-      <DefaultTypelessProvider>
-        <App />
-      </DefaultTypelessProvider>
-    </Hmr>,
-    MOUNT_NODE
-  )
-}
+const Root = hot(() => <App />)
 
-if (module.hot) {
-  module.hot.accept('./App', () => {
-    startHmr()
-    render()
-  })
-}
-render()
+ReactDOM.render(<Root />, MOUNT_NODE)
