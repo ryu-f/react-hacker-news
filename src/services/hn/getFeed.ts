@@ -1,6 +1,6 @@
-import request from '@/services/request'
+import KY from '@/services/KY'
 
 export default function({ type, page }: { type: string; page: number }) {
   const url = `${type}/${page}.json`
-  return request.get(url)
+  return KY.get(url)
 }

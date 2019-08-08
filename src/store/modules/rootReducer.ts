@@ -1,12 +1,12 @@
-// import { combineReducers } from 'redux'
-// import { reducer as newsReducer, State as NewsState } from './modules/news'
+import { combineReducers } from 'redux'
+import { reducer as newsReducer, State as NewsState } from './news'
 
-// export interface RootState {
-//   news: NewsState
-// }
+export interface RootState {
+  news: NewsState
+}
 
-// const rootReducer = combineReducers({
-//   news: newsReducer
-// })
+const rootReducer = combineReducers({
+  news: newsReducer
+})
 
-// export default rootReducer
+export default rootReducer
