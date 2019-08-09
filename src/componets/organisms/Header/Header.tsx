@@ -5,7 +5,7 @@ import { State as NewsState } from '@/store/modules/news'
 
 type Props = Pick<NewsState, 'types'>
 
-export const Header: React.SFC<Props> = ({ types }) => (
+export const Header: React.FC<Props> = ({ types }) => (
   <Wrapper>
     <List>
       {types.map((el, i) => (

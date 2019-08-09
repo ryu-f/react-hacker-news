@@ -10,7 +10,7 @@ type Props = {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export const BasicButton: React.SFC<Props> = ({ width, height, size, color, children, onClick }) => (
+export const BasicButton: React.FC<Props> = ({ width, height, size, color, children, onClick }) => (
   <Component width={width} height={height} size={size} color={color} onClick={onClick}>
     {children}
   </Component>

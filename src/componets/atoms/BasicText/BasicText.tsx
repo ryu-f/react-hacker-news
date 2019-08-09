@@ -8,7 +8,7 @@ type Props = {
   href?: string
 }
 
-export const BasicText: React.SFC<Props> = ({ children, size, color, href }) => (
+export const BasicText: React.FC<Props> = ({ children, size, color, href }) => (
   <Component size={size} color={color} href={href}>
     {children}
   </Component>
