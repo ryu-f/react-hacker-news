@@ -12,8 +12,8 @@ export const Card: React.FC<Props> = ({ feedItem }) => {
 
   return (
     <>
-      {feedItem.map((el, i) => {
-        ;<Wrapper key={`card-${i}`}>
+      {feedItem.map((el, i) => (
+        <Wrapper key={`card-${i}`}>
           <PrimaryArea>
             {el.title && (
               <HeadLine size={'LARGE'} color={'BLACK'}>
@@ -35,7 +35,7 @@ export const Card: React.FC<Props> = ({ feedItem }) => {
           </PrimaryArea>
           <SecondaryArea>{el.url}</SecondaryArea>
         </Wrapper>
-      })}
+      ))}
     </>
   )
 }
