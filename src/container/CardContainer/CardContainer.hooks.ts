@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux'
-import { RootState } from '@/store/modules/rootreducer'
+import { State as NewsState } from '@/store/modules/news'
 import { newsSelectors } from '@/store/modules/news'
 
 export function useNews() {
   return {
-    ...useSelector(({ news }: RootState) => ({
-      feedItem: newsSelectors.useRangeFeedItem(news.feedItem)
+    ...useSelector(({ news }: { news: NewsState }) => ({
+      feedItem: newsSelectors.useExtractingFeedItem(news.feedItem)
     }))
   }
 }

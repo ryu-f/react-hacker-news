@@ -4,7 +4,7 @@ import { State } from './reducer'
 
 export const getNews = (state: RootState) => state.news
 
-export function useRangeFeedItem(feedItem: State['feedItem']) {
+export function useExtractingFeedItem(feedItem: State['feedItem']) {
   const [rangeFeedItem, sliceFeedItem] = useState<State['feedItem']>([])
   const DISPLAY_LIMIT = 15
 

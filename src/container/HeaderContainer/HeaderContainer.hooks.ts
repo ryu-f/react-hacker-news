@@ -1,12 +1,12 @@
 import { useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '@/store/modules/rootreducer'
+import { State as NewsState } from '@/store/modules/news'
 
 export function useNews() {
   const dispatch = useDispatch()
 
   return {
-    ...useSelector(({ news }: RootState) => ({
+    ...useSelector(({ news }: { news: NewsState }) => ({
       types: news.types
     })),
 
