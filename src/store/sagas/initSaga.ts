@@ -4,10 +4,9 @@ import getFeed from '@/services/hn/getFeed'
 
 function* fetchFeedItem(): Iterable<Effect> {
   const state: NewsState = yield select(newsSelectors.getNews)
-  const { selectedType, page } = state
-  return yield call(getFeed, { type: selectedType, page })
+  const { selectedType, paging } = state
+  return yield call(getFeed, { type: selectedType, paging })
 }
-
 function* launchProcess(): Iterable<Effect> {
   const response = yield call(fetchFeedItem)
   yield put(newsActions.getFeedItem(response))
