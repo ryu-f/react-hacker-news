@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development",
-    "build": "cross-env NODE_ENV=production npm-run-all del:dist copy:static webpack:production",
+    "dev": "webpack-dev-server --mode development",
+    "build": "npm-run-all del:dist copy:static webpack:production",
     "fix": "eslint --fix '**/*.ts{,x}'",
     "webpack:production": "webpack --mode production",
     "commit": "commit",
@@ -51,7 +51,6 @@
     "@types/redux-saga": "^0.10.5",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.1",
-    "cross-env": "^5.2.0",
     "immer": "^3.1.3",
     "ky": "^0.11.2",
     "react": "^16.8.6",
