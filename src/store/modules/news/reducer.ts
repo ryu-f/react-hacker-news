@@ -26,6 +26,10 @@ export const reducer = (state: State = initialState, action: Actions): State => 
         draft.feedItem = action.payload
         break
 
+      case types.SETTING_FEED_TYPE:
+        draft.selectedType = action.payload
+        break
+
       default:
         break
     }
