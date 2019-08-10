@@ -2,14 +2,15 @@ import { put, call, select, take, fork, takeEvery } from 'redux-saga/effects'
 import { State as NewsState, newsSelectors, newsActions, newsTypes } from '@/store/modules/news'
 import getFeed from '@/services/hn/getFeed'
 
+type selectFeedTypeParam = ReturnType<typeof newsActions.selectFeedType>
+
 function* fetchFeedItem() {
   const state: NewsState = yield select(newsSelectors.getNews)
   const { selectedType, paging } = state
   return yield call(getFeed, { type: selectedType, paging })
 }
 
-// TODO: action type
-function* selectFeedType(action: any) {
+function* selectFeedType(action: selectFeedTypeParam) {
   yield put(newsActions.settingFeedType(action.payload))
   yield fork(getFeedItem)
 }
@@ -25,7 +26,6 @@ function* searchPageParam() {
   const { types } = state
   const target = pathname.split('/')[1]
   const isExist = types.some(type => type === target)
-  // TODO: return fix
   return isExist ? target : null
 }
 
