@@ -1,25 +1,25 @@
-import { put, call, select, take, fork, Effect, takeEvery } from 'redux-saga/effects'
-import { State as NewsState, newsSelectors, newsActions } from '@/store/modules/news'
+import { put, call, select, take, fork, takeEvery } from 'redux-saga/effects'
+import { State as NewsState, newsSelectors, newsActions, newsTypes } from '@/store/modules/news'
 import getFeed from '@/services/hn/getFeed'
 
-function* fetchFeedItem(): Iterable<Effect> {
+function* fetchFeedItem() {
   const state: NewsState = yield select(newsSelectors.getNews)
   const { selectedType, paging } = state
   return yield call(getFeed, { type: selectedType, paging })
 }
 
 // TODO: action type
-function* selectFeedType(action: any): Iterable<Effect> {
+function* selectFeedType(action: any) {
   yield put(newsActions.settingFeedType(action.payload))
   yield fork(getFeedItem)
 }
 
-function* getFeedItem(): Iterable<Effect> {
+function* getFeedItem() {
   const feedItem = yield call(fetchFeedItem)
   yield put(newsActions.getFeedItem(feedItem))
 }
 
-function* searchPageParam(): Iterable<Effect> {
+function* searchPageParam() {
   const pathname = window.location.pathname
   const state: NewsState = yield select(newsSelectors.getNews)
   const { types } = state
@@ -29,14 +29,14 @@ function* searchPageParam(): Iterable<Effect> {
   return isExist ? target : null
 }
 
-function* launchProcess(): Iterable<Effect> {
-  const isPageParam = yield call(searchPageParam)
-  if (isPageParam) return yield put({ type: 'SELECT_FEED_TYPE', payload: isPageParam })
+function* launchProcess() {
+  const isPageParam: string | null = yield call(searchPageParam)
+  if (isPageParam) return yield put(newsActions.selectFeedType(isPageParam))
   yield fork(getFeedItem)
 }
 
 export default function* initSaga() {
-  yield takeEvery('SELECT_FEED_TYPE', selectFeedType)
+  yield takeEvery(newsTypes.SELECT_FEED_TYPE, selectFeedType)
   while (yield take('INIT')) {
     yield fork(launchProcess)
   }

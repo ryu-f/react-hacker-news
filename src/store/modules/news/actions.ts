@@ -1,23 +1,29 @@
 import * as types from './types'
 import { State } from './reducer'
 
-type GetFeedItemArgs = Pick<State, 'feedItem'>['feedItem']
+type GetFeedItemAction = {
+  payload: State['feedItem']
+}
 
-export const getFeedItem = (items: GetFeedItemArgs) => ({
+export const getFeedItem = (items: GetFeedItemAction['payload']) => ({
   type: types.GET_FEED_ITEM,
   payload: items
 })
 
-type SelectFeedTypeArgs = Pick<State, 'selectedType'>['selectedType']
+type SelectFeedTypeAction = {
+  payload: State['selectedType']
+}
 
-export const selectFeedType = (selected: SelectFeedTypeArgs) => ({
+export const selectFeedType = (selected: SelectFeedTypeAction['payload']) => ({
   type: types.SELECT_FEED_TYPE,
   payload: selected
 })
 
-type SettingFeedTypeArgs = Pick<State, 'selectedType'>['selectedType']
+type SettingFeedTypeAction = {
+  payload: State['selectedType']
+}
 
-export const settingFeedType = (selected: SettingFeedTypeArgs) => ({
+export const settingFeedType = (selected: SettingFeedTypeAction['payload']) => ({
   type: types.SETTING_FEED_TYPE,
   payload: selected
 })

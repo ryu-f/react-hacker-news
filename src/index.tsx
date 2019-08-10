@@ -10,6 +10,12 @@ const store = configureStore()
 
 if (!MOUNT_NODE) throw new Error('<div id="root" /> not found')
 
+if (process.env.DEBUG_ENV === 'enable') {
+  import('why-did-you-update').then(({ whyDidYouUpdate }) => {
+    whyDidYouUpdate(React)
+  })
+}
+
 const Root = hot(() => (
   <Provider store={store}>
     <App />

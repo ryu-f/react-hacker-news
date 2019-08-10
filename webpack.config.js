@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -60,6 +61,11 @@ module.exports = () => {
     },
 
     plugins: [
+      new webpack.DefinePlugin({
+        'process.env': {
+          DEBUG_ENV: JSON.stringify(process.env.DEBUG_ENV)
+        }
+      }),
       new ProgressBarPlugin(),
       new ForkTsCheckerWebpackPlugin(),
       new HtmlWebpackPlugin({
