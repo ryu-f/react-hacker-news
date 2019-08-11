@@ -1,6 +1,10 @@
 module.exports = {
   processors: ['stylelint-processor-styled-components'],
-  extends: ['stylelint-config-prettier', 'stylelint-config-standard', 'stylelint-config-styled-components'],
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-styled-components',
+    'stylelint-config-prettier'
+  ],
   rules: {
     'unit-no-unknown': null
   }

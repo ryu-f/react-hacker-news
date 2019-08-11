@@ -26,12 +26,6 @@ export const Card: React.FC<Props> = ({ feedItem }) => {
                 {el.user}
               </SubTitle>
             )}
-
-            {el.time_ago && (
-              <BodyText size={'BASE'} color={'BLACK'}>
-                {el.time_ago}
-              </BodyText>
-            )}
           </PrimaryArea>
           <SecondaryArea>{el.url}</SecondaryArea>
         </Wrapper>
@@ -46,7 +40,8 @@ const Wrapper = styled.div`
   border-radius: 4px;
   background-color: #fff;
   height: 100%;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
 `
 
 const PrimaryArea = styled.div`
@@ -60,10 +55,6 @@ const HeadLine = styled(BasicText)`
 const SubTitle = styled(BasicText)`
   display: block;
   margin-top: 10px;
-`
-
-const BodyText = styled(BasicText)`
-  margin-top: 20px;
 `
 
 const SecondaryArea = styled.div`

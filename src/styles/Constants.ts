@@ -15,3 +15,12 @@ export const COLOR = {
   WHITE: 'rgb(255, 255, 255)',
   GLAY: 'rgba(0,0,0,0.54)'
 }
+
+/**
+ * break point
+ */
+
+export const BREAK_POINT = {
+  MOBILE: 750,
+  TABLET: 1024
+}

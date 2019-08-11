@@ -3,6 +3,11 @@ export const SELECT_FEED_TYPE = 'SELECT_FEED_TYPE' as const
 export const SETTING_FEED_TYPE = 'SETTING_FEED_TYPE' as const
 
 /**
+ * There are five item feeds.
+ */
+export type Feeds = 'news' | 'newest' | 'ask' | 'show' | 'jobs'
+
+/**
  * Each item feed returns an array of `FeedItem`.
  */
 export type FeedItem = {

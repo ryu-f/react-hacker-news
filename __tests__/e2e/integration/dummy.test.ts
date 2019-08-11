@@ -8,6 +8,9 @@ describe('dummy', () => {
 
   it('dummy', async () => {
     await expect(page.title()).resolves.toMatch('Google')
-    await page.screenshot({ path: path.join(CONSTANTS.SCREEN_SHOT_DIR, '/dummy.png'), fullPage: true })
+    await page.screenshot({
+      path: path.join(CONSTANTS.SCREEN_SHOT_DIR, '/dummy.png'),
+      fullPage: true
+    })
   })
 })

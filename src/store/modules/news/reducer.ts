@@ -4,14 +4,14 @@ import * as creators from './actions'
 import { CreatorToActions } from '@/store/modules/CreatorToActions'
 
 export type State = {
-  types: ('news' | 'newset' | 'ask' | 'show' | 'jobs')[]
+  types: types.Feeds[]
   selectedType: string
   feedItem: types.FeedItem[]
   paging: number
 }
 
 const initialState: State = {
-  types: ['news', 'newset', 'ask', 'show', 'jobs'],
+  types: ['news', 'newest', 'ask', 'show', 'jobs'],
   selectedType: 'news',
   feedItem: [],
   paging: 1
