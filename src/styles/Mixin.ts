@@ -13,6 +13,20 @@ const mediaQuery: MediaQuery = {
 
 type AccArguments = (literals: TemplateStringsArray, ...placeholders: any[]) => string
 
+/**
+ * styled-components media query helper
+ * @example
+ * ```
+ * const StyledComponent = styled.div`
+ *  display:block;
+ *
+ *  ${media.desktop`
+ *    display: none;
+ *  `}
+ *
+ * `
+ * ```
+ */
 export const media = Object.keys(mediaQuery).reduce(
   (acc, label) => {
     acc[label] = (literals: TemplateStringsArray, ...placeholders: any[]) =>
