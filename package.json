@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
+    "dev": "webpack-dev-server --config webpack.dev.js",
     "debug": "cross-env DEBUG_ENV=enable webpack-dev-server --mode development",
     "build": "npm-run-all del:dist copy:static webpack:production",
     "fix": "eslint --fix '**/*.ts{,x}'",
-    "webpack:production": "webpack --mode production",
+    "webpack:production": "webpack --config webpack.prod.js",
     "commit": "commit",
     "lint:ts": "eslint '**/*.ts{,x}'",
     "lint:css": "stylelint --fix '**/*.ts{,x}'",
@@ -95,6 +95,7 @@
     "@types/storybook__addon-storyshots": "^4.0.1",
     "@types/storybook__react": "^4.0.2",
     "@types/styled-components": "4.1.8",
+    "@types/webpack": "^4.32.1",
     "@types/why-did-you-update": "0.0.10",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
@@ -131,6 +132,7 @@
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.5.1",
+    "webpack-merge": "^4.2.1",
     "why-did-you-update": "^1.0.6"
   }
 }
