@@ -1,10 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import BasicText from '@/componets/atoms/BasicText'
-import { newsTypes } from '@/store/modules/news'
+import { NEWS_TYPES } from '@/store/modules/news'
 
 type Props = {
-  feedItem: newsTypes.FeedItem[]
+  feedItem: NEWS_TYPES.FeedItem[]
 }
 
 export const Card: React.FC<Props> = ({ feedItem }) => {

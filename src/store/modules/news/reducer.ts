@@ -1,12 +1,12 @@
 import produce from 'immer'
-import * as types from './types'
+import * as TYPES from './types'
 import * as creators from './actions'
 import { CreatorToActions } from '@/store/modules/CreatorToActions'
 
 export type State = {
-  types: types.Feeds[]
+  types: TYPES.Feeds[]
   selectedType: string
-  feedItem: types.FeedItem[]
+  feedItem: TYPES.FeedItem[]
   paging: number
 }
 
@@ -22,11 +22,11 @@ type Actions = CreatorToActions<typeof creators>
 export const reducer = (state: State = initialState, action: Actions): State => {
   return produce(state, draft => {
     switch (action.type) {
-      case types.GET_FEED_ITEM:
+      case TYPES.GET_FEED_ITEM:
         draft.feedItem = action.payload
         break
 
-      case types.SETTING_FEED_TYPE:
+      case TYPES.SETTING_FEED_TYPE:
         draft.selectedType = action.payload
         break
 

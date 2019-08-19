@@ -1,4 +1,4 @@
-import * as types from './types'
+import * as TYPES from './types'
 import { State } from './reducer'
 
 type GetFeedItemAction = {
@@ -6,7 +6,7 @@ type GetFeedItemAction = {
 }
 
 export const getFeedItem = (items: GetFeedItemAction['payload']) => ({
-  type: types.GET_FEED_ITEM,
+  type: TYPES.GET_FEED_ITEM,
   payload: items
 })
 
@@ -15,7 +15,7 @@ type SelectFeedTypeAction = {
 }
 
 export const selectFeedType = (selected: SelectFeedTypeAction['payload']) => ({
-  type: types.SELECT_FEED_TYPE,
+  type: TYPES.SELECT_FEED_TYPE,
   payload: selected
 })
 
@@ -24,6 +24,6 @@ type SettingFeedTypeAction = {
 }
 
 export const settingFeedType = (selected: SettingFeedTypeAction['payload']) => ({
-  type: types.SETTING_FEED_TYPE,
+  type: TYPES.SETTING_FEED_TYPE,
   payload: selected
 })

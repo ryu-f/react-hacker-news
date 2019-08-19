@@ -1,5 +1,5 @@
 import { put, call, select, take, fork, takeEvery } from 'redux-saga/effects'
-import { State as NewsState, newsSelectors, newsActions, newsTypes } from '@/store/modules/news'
+import { State as NewsState, newsSelectors, newsActions, NEWS_TYPES } from '@/store/modules/news'
 import getFeed from '@/services/hn/getFeed'
 
 type selectFeedTypeParam = ReturnType<typeof newsActions.selectFeedType>
@@ -36,7 +36,7 @@ function* launchProcess() {
 }
 
 export default function* initSaga() {
-  yield takeEvery(newsTypes.SELECT_FEED_TYPE, selectFeedType)
+  yield takeEvery(NEWS_TYPES.SELECT_FEED_TYPE, selectFeedType)
   while (yield take('INIT')) {
     yield fork(launchProcess)
   }
