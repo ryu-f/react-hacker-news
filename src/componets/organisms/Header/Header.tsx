@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BasicText from '@/componets/atoms/BasicText'
-import { State as NewsState } from '@/store/modules/news'
+import { State as NewsState } from '@/store/modules/domain/news'
 
 type Props = {
   types: Pick<NewsState, 'types'>['types']

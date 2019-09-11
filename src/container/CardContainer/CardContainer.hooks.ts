@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
-import { State as NewsState } from '@/store/modules/news'
-import { newsSelectors } from '@/store/modules/news'
+import { State as NewsState } from '@/store/modules/domain/news'
+import { newsSelectors } from '@/store/modules/domain/news'
 
 export function useNews() {
   return {

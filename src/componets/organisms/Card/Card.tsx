@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import BasicText from '@/componets/atoms/BasicText'
-import { NEWS_TYPES } from '@/store/modules/news'
+import { NEWS_TYPES } from '@/store/modules/domain/news'
 
 type Props = {
   feedItem: NEWS_TYPES.FeedItem[]

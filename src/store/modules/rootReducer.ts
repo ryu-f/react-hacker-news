@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { reducer as newsReducer, State as NewsState } from './news'
+import { reducer as newsReducer, State as NewsState } from './domain/news'
 
 export interface RootState {
   news: NewsState
