@@ -7,10 +7,10 @@ export function useNews() {
 
   return {
     ...useSelector(({ news }: { news: NewsState }) => ({
-      types: news.types
+      items: news.types
     })),
 
-    selectFeedType: useCallback(
+    itemOnClick: useCallback(
       (selected: string) => {
         dispatch({ type: 'SELECT_FEED_TYPE', payload: selected })
       },

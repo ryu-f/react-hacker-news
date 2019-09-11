@@ -4,15 +4,15 @@ import BasicText from '@/componets/atoms/BasicText'
 import { NEWS_TYPES } from '@/store/modules/domain/news'
 
 type Props = {
-  feedItem: NEWS_TYPES.FeedItem[]
+  cards: NEWS_TYPES.FeedItem[]
 }
 
-export const Card: React.FC<Props> = ({ feedItem }) => {
-  if (!feedItem.length) return null
+export const Card: React.FC<Props> = ({ cards }) => {
+  if (!cards.length) return null
 
   return (
     <>
-      {feedItem.map((el, i) => (
+      {cards.map((el, i) => (
         <Wrapper key={`card-${i}`}>
           <PrimaryArea>
             {el.title && (

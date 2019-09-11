@@ -4,15 +4,15 @@ import BasicText from '@/componets/atoms/BasicText'
 import { State as NewsState } from '@/store/modules/domain/news'
 
 type Props = {
-  types: Pick<NewsState, 'types'>['types']
-  selectFeedType: (selected: string) => void
+  items: Pick<NewsState, 'types'>['types']
+  itemOnClick: (selected: string) => void
 }
 
-export const Header: React.FC<Props> = ({ types, selectFeedType }) => (
+export const Header: React.FC<Props> = ({ items, itemOnClick }) => (
   <Wrapper>
     <List>
-      {types.map((el, i) => (
-        <Item key={i} onClick={() => selectFeedType(el)}>
+      {items.map((el, i) => (
+        <Item key={i} onClick={() => itemOnClick(el)}>
           <BasicText size={'BASE'} color={'WHITE'}>
             {el}
           </BasicText>

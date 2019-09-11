@@ -5,7 +5,7 @@ import { newsSelectors } from '@/store/modules/domain/news'
 export function useNews() {
   return {
     ...useSelector(({ news }: { news: NewsState }) => ({
-      feedItem: newsSelectors.useExtractingFeedItem(news.feedItem)
+      cards: newsSelectors.useExtractingFeedItem(news.feedItem)
     }))
   }
 }
