@@ -66,8 +66,8 @@
   },
   "devDependencies": {
     "@commitlint/cli": "8.1.0",
-    "@commitlint/config-conventional": "8.0.0",
-    "@commitlint/prompt-cli": "8.0.0",
+    "@commitlint/config-conventional": "8.1.0",
+    "@commitlint/prompt-cli": "8.1.0",
     "@hot-loader/react-dom": "16.8.6",
     "@storybook/addon-actions": "5.1.9",
     "@storybook/addon-info": "5.1.9",
