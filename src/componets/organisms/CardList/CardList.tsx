@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Card from '@/componets/organisms/Card'
 import BasicText from '@/componets/atoms/BasicText'
 import { FeedItem } from '@/types/domain/hn'
+import { media } from '@/styles/Mixin'
 
 type Props = {
   cards: FeedItem[]
@@ -20,7 +21,7 @@ export const CardList: React.FC<Props> = ({ cards }) => {
               <PrimaryArea key={`card-${i}`}>{card.title}</PrimaryArea>,
 
               card.user ? (
-                <HeadLine size={'BASE'} color={'BLACK'}>
+                <HeadLine size={'BASE'} color={'GLAY'}>
                   by {card.user}
                 </HeadLine>
               ) : null,
@@ -42,7 +43,9 @@ const LayoutFlex = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 8vw;
+  ${media.desktop`
+    padding: 80px 8vw;
+  `}
 `
 
 const LayoutItem = styled.li`

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import BasicText from '@/componets/atoms/BasicText'
 import { State as NewsState } from '@/store/modules/domain/news'
-import { useStyledMediaQuery } from '@/hooks/useStyledMediaQuery'
+import { media } from '@/styles/Mixin'
 
 type Props = {
   items: Pick<NewsState, 'types'>['types']
@@ -22,8 +22,6 @@ export const Header: React.FC<Props> = ({ items, itemOnClick }) => (
     </LayoutList>
   </LayoutWrapper>
 )
-
-const media = useStyledMediaQuery()
 
 const LayoutWrapper = styled.nav`
   display: flex;
