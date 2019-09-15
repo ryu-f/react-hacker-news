@@ -1,5 +1,5 @@
-import { css } from 'styled-components'
 import { BACKGROUND_COLOR } from './Constants'
+import { css } from 'styled-components'
 
 export const BaseStyle = css`
   * {

@@ -1,8 +1,9 @@
-import { createStore, applyMiddleware, compose } from 'redux'
+import { applyMiddleware, compose, createStore } from 'redux'
+
 import createSagaMiddleware from 'redux-saga'
+import logger from 'redux-logger'
 import rootReducer from './modules/rootReducer'
 import rootSaga from './sagas/rootSaga'
-import logger from 'redux-logger'
 
 const env = process.env.NODE_ENV
 const sagaMiddleware = createSagaMiddleware()

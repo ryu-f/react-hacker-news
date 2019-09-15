@@ -1,5 +1,5 @@
-import path from 'path'
 import { CONSTANTS } from '../config/constants'
+import path from 'path'
 
 describe('dummy', () => {
   beforeAll(async () => {

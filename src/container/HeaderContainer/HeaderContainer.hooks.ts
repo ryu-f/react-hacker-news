@@ -1,6 +1,7 @@
-import { useCallback } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { State as NewsState } from '@/store/modules/domain/news'
+import { useCallback } from 'react'
 
 export function useNews() {
   const dispatch = useDispatch()

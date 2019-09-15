@@ -1,4 +1,5 @@
 import * as TYPES from './types'
+
 import { State } from './reducer'
 
 type GetFeedItemAction = {

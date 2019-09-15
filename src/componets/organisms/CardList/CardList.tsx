@@ -1,9 +1,10 @@
 import * as React from 'react'
-import styled from 'styled-components'
-import Card from '@/componets/organisms/Card'
+
 import BasicText from '@/componets/atoms/BasicText'
+import Card from '@/componets/organisms/Card'
 import { FeedItem } from '@/types/domain/hn'
 import { media } from '@/styles/Mixin'
+import styled from 'styled-components'
 
 type Props = {
   cards: FeedItem[]

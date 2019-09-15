@@ -7,11 +7,11 @@
     "dev": "webpack-dev-server --config webpack.dev.js",
     "debug": "cross-env DEBUG_ENV=enable webpack-dev-server --mode development",
     "build": "npm-run-all del:dist copy:static webpack:production",
-    "fix": "eslint --fix '**/*.ts{,x}'",
     "webpack:production": "webpack --config webpack.prod.js",
     "commit": "commit",
     "lint:ts": "eslint '**/*.ts{,x}'",
     "lint:css": "stylelint --fix '**/*.ts{,x}'",
+    "lint:fix": "eslint --fix '**/*.ts{,x}'",
     "unit": "jest",
     "unit:watch": "jest --watch",
     "unit:coverage": "jest --coverage",
@@ -20,7 +20,8 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "copy:static": "cpx './src/static/**/*' './dist'",
-    "del:dist": "rimraf './dist'"
+    "del:dist": "rimraf './dist'",
+    "sort:import": "import-sort --write '**/*.ts{,x}'"
   },
   "repository": {
     "type": "git",
@@ -38,7 +39,8 @@
   },
   "lint-staged": {
     "*.ts{,x}": [
-      "npm run fix",
+      "npm run sort:import",
+      "npm run lint:fix",
       "npm run lint:css",
       "git add"
     ]
@@ -110,6 +112,7 @@
     "fork-ts-checker-webpack-plugin": "1.5.0",
     "html-webpack-plugin": "3.2.0",
     "husky": "2.7.0",
+    "import-sort-cli": "^6.0.0",
     "jest": "24.9.0",
     "jest-puppeteer": "4.2.0",
     "lint-staged": "8.2.1",

@@ -1,6 +1,8 @@
 import * as React from 'react'
+
+import { COLOR, FONT_SIZE } from '@/styles/Constants'
+
 import styled from 'styled-components'
-import { FONT_SIZE, COLOR } from '@/styles/Constants'
 
 type Props = {
   size: 'BASE' | 'SMALL' | 'LARGE'

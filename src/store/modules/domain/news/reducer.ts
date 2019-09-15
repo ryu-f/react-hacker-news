@@ -1,8 +1,10 @@
-import produce from 'immer'
-import * as creators from './actions'
 import * as TYPES from './types'
+import * as creators from './actions'
+
+import { FeedItem, Feeds } from '@/types/domain/hn'
+
 import { CreatorToActions } from '@/store/modules/CreatorToActions'
-import { Feeds, FeedItem } from '@/types/domain/hn'
+import produce from 'immer'
 
 export type State = {
   types: Feeds[]

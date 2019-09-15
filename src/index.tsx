@@ -1,9 +1,10 @@
 import * as React from 'react'
-import ReactDOM from 'react-dom'
+
 import App from './App'
-import { hot } from 'react-hot-loader/root'
 import { Provider } from 'react-redux'
+import ReactDOM from 'react-dom'
 import configureStore from './store/configureStore'
+import { hot } from 'react-hot-loader/root'
 
 const MOUNT_NODE = document.getElementById('root')
 const store = configureStore()

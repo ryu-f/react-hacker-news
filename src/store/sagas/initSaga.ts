@@ -1,10 +1,11 @@
-import { put, call, select, take, fork, takeEvery } from 'redux-saga/effects'
 import {
+  NEWS_TYPES,
   State as NewsState,
-  newsSelectors,
   newsActions,
-  NEWS_TYPES
+  newsSelectors
 } from '@/store/modules/domain/news'
+import { call, fork, put, select, take, takeEvery } from 'redux-saga/effects'
+
 import getFeed from '@/services/hn/getFeed'
 
 type selectFeedTypeParam = ReturnType<typeof newsActions.selectFeedType>
