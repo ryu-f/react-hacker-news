@@ -1,4 +1,5 @@
 import { css } from 'styled-components'
+import { BACKGROUND_COLOR } from './Constants'
 
 export const BaseStyle = css`
   * {
@@ -7,6 +8,6 @@ export const BaseStyle = css`
 
   body {
     font-family: 'Oswald', sans-serif;
-    background-color: #eee;
+    background-color: ${BACKGROUND_COLOR.GLAY};
   }
 `

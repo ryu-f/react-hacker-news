@@ -10,22 +10,22 @@ type Props = {
 }
 
 export const Header: React.FC<Props> = ({ items, itemOnClick }) => (
-  <Wrapper>
-    <List>
+  <LayoutWrapper>
+    <LayoutList>
       {items.map((item, i) => (
-        <Item key={`item-${i}`} onClick={() => itemOnClick(item)}>
+        <LayoutItem key={`item-${i}`} onClick={() => itemOnClick(item)}>
           <BasicText size={'BASE'} color={'WHITE'}>
             {item}
           </BasicText>
-        </Item>
+        </LayoutItem>
       ))}
-    </List>
-  </Wrapper>
+    </LayoutList>
+  </LayoutWrapper>
 )
 
 const media = useStyledMediaQuery()
 
-const Wrapper = styled.nav`
+const LayoutWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,12 +37,12 @@ const Wrapper = styled.nav`
   `}
 `
 
-const List = styled.ul`
+const LayoutList = styled.ul`
   min-width: 550px;
   display: flex;
   justify-content: space-around;
 `
 
-const Item = styled.li`
+const LayoutItem = styled.li`
   cursor: pointer;
 `
