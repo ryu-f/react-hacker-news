@@ -1,12 +1,13 @@
 import produce from 'immer'
-import * as TYPES from './types'
 import * as creators from './actions'
+import * as TYPES from './types'
 import { CreatorToActions } from '@/store/modules/CreatorToActions'
+import { Feeds, FeedItem } from '@/types/domain/hn'
 
 export type State = {
-  types: TYPES.Feeds[]
+  types: Feeds[]
   selectedType: string
-  feedItem: TYPES.FeedItem[]
+  feedItem: FeedItem[]
   paging: number
 }
 

@@ -2,10 +2,10 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Card from '@/componets/organisms/Card'
 import BasicText from '@/componets/atoms/BasicText'
-import { NEWS_TYPES } from '@/store/modules/domain/news'
+import { FeedItem } from '@/types/domain/hn'
 
 type Props = {
-  cards: NEWS_TYPES.FeedItem[]
+  cards: FeedItem[]
 }
 
 export const CardList: React.FC<Props> = ({ cards }) => {
@@ -38,13 +38,14 @@ export const CardList: React.FC<Props> = ({ cards }) => {
   )
 }
 
-const LayoutFlex = styled.div`
+const LayoutFlex = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 0 8vw;
 `
 
-const LayoutItem = styled.div`
+const LayoutItem = styled.li`
   width: calc(100 / 3%);
 `
 
