@@ -1,9 +1,9 @@
 import * as React from 'react'
-import Card from '@/componets/organisms/Card'
+import CardList from '@/componets/organisms/CardList'
 import { useNews } from './CardContainer.hooks'
 
 export const CardContainer: React.FC = () => {
   const _props = useNews()
 
-  return <Card {..._props} />
+  return <CardList {..._props} />
 }

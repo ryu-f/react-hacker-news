@@ -12,10 +12,10 @@ type Props = {
 export const Header: React.FC<Props> = ({ items, itemOnClick }) => (
   <Wrapper>
     <List>
-      {items.map((el, i) => (
-        <Item key={i} onClick={() => itemOnClick(el)}>
+      {items.map((item, i) => (
+        <Item key={`item-${i}`} onClick={() => itemOnClick(item)}>
           <BasicText size={'BASE'} color={'WHITE'}>
-            {el}
+            {item}
           </BasicText>
         </Item>
       ))}
