@@ -5,22 +5,18 @@ import { COLOR, FONT_SIZE } from '@/styles/Constants'
 import styled from 'styled-components'
 
 type Props = {
-  width: string
-  height: string
   size: 'BASE' | 'SMALL' | 'LARGE'
   color: 'BLACK' | 'WHITE'
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export const BasicButton: React.FC<Props> = ({ width, height, size, color, children, onClick }) => (
-  <Component width={width} height={height} size={size} color={color} onClick={onClick}>
+export const BasicButton: React.FC<Props> = ({ size, color, children, onClick }) => (
+  <Component size={size} color={color} onClick={onClick}>
     {children}
   </Component>
 )
 
 const Component = styled.button<Props>`
-  width: ${({ width }) => width}px;
-  height: ${({ height }) => height}px;
   font-size: ${({ size }) => FONT_SIZE[size]}px;
   color: ${({ color }) => COLOR[color]};
 `
