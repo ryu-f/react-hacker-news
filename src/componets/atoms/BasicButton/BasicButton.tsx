@@ -6,17 +6,38 @@ import styled from 'styled-components'
 
 type Props = {
   size: 'BASE' | 'SMALL' | 'LARGE'
-  color: 'BLACK' | 'WHITE'
+  textColor: 'BLACK' | 'WHITE'
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export const BasicButton: React.FC<Props> = ({ size, color, children, onClick }) => (
-  <Component size={size} color={color} onClick={onClick}>
+interface AnchorProps extends Props, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  onClick?:
+    | (((event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void) &
+        ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void))
+    | undefined
+}
+
+export const BasicButton: React.FC<Props> = ({ size, textColor, children, onClick, ...props }) => (
+  <View size={size} textColor={textColor} onClick={onClick} {...props}>
     {children}
-  </Component>
+  </View>
 )
 
-const Component = styled.button<Props>`
+export const AnchorButton: React.FC<AnchorProps> = ({
+  size,
+  textColor,
+  children,
+  onClick,
+  ...props
+}) => (
+  <AnchorButtonView size={size} textColor={textColor} onClick={onClick} {...props}>
+    {children}
+  </AnchorButtonView>
+)
+
+const View = styled.button<Props>`
   font-size: ${({ size }) => FONT_SIZE[size]}px;
-  color: ${({ color }) => COLOR[color]};
+  color: ${({ textColor }) => COLOR[textColor]};
 `
+
+const AnchorButtonView = View.withComponent('a')
