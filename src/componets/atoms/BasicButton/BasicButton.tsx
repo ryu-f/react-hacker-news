@@ -11,6 +11,7 @@ type Props = {
 }
 
 interface AnchorProps extends Props, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string
   onClick?:
     | (((event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void) &
         ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void))
@@ -26,11 +27,12 @@ export const BasicButton: React.FC<Props> = ({ size, textColor, children, onClic
 export const AnchorButton: React.FC<AnchorProps> = ({
   size,
   textColor,
+  href,
   children,
   onClick,
   ...props
 }) => (
-  <AnchorButtonView size={size} textColor={textColor} onClick={onClick} {...props}>
+  <AnchorButtonView size={size} textColor={textColor} href={href} onClick={onClick} {...props}>
     {children}
   </AnchorButtonView>
 )

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { AnchorButton } from './'
-import { BasicButton } from './'
+import { AnchorButton, BasicButton } from './'
+
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
