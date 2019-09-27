@@ -14,12 +14,12 @@ export const CardList: React.FC<Props> = ({ cards }) => {
   if (!cards.length) return null
 
   return (
-    <LayoutFlex>
+    <LayoutGrid>
       {cards.map((card, i) => (
         <LayoutItem>
-          <Card>
+          <Card key={`card-${i}`}>
             {[
-              <PrimaryArea key={`card-${i}`}>{card.title}</PrimaryArea>,
+              <PrimaryArea>{card.title}</PrimaryArea>,
 
               card.user ? (
                 <HeadLine size={'BASE'} color={'GLAY'}>
@@ -27,42 +27,33 @@ export const CardList: React.FC<Props> = ({ cards }) => {
                 </HeadLine>
               ) : null,
 
-              <SubTitle size={'BASE'} color={'BLACK'}>
-                {card.type}
-              </SubTitle>,
-
               card.url ? <SecondaryArea>{card.url}</SecondaryArea> : null
             ]}
           </Card>
         </LayoutItem>
       ))}
-    </LayoutFlex>
+    </LayoutGrid>
   )
 }
 
-const LayoutFlex = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+const LayoutGrid = styled.ul`
+  display: grid;
   ${media.desktop`
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
     padding: 80px 8vw;
+    grid-gap: 20px;
   `}
 `
 
-const LayoutItem = styled.li`
-  width: calc(100 / 3%);
-`
+const LayoutItem = styled.li``
 
 const PrimaryArea = styled.div`
   width: 100%;
+  line-height: 1.2;
 `
 
 const HeadLine = styled(BasicText)`
   margin-top: 20px;
 `
-const SubTitle = styled(BasicText)`
-  display: block;
-  margin-top: 10px;
-`
-
 const SecondaryArea = styled.div``

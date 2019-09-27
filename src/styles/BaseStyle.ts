@@ -7,7 +7,7 @@ export const BaseStyle = css`
   }
 
   body {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', 'Oswald', sans-serif;
     background-color: ${BACKGROUND_COLOR.GLAY};
   }
 `

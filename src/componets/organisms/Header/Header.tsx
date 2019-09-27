@@ -43,4 +43,5 @@ const LayoutList = styled.ul`
 
 const LayoutItem = styled.li`
   cursor: pointer;
+  font-family: 'Oswald', sans-serif;
 `
