@@ -31,20 +31,6 @@
   "author": "ryu.furuta",
   "license": "ISC",
   "homepage": "https://github.com/ryu-f/react-hacker-news#readme",
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.ts{,x}": [
-      "npm run sort:import",
-      "npm run lint:fix",
-      "npm run lint:css",
-      "git add"
-    ]
-  },
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
