@@ -82,12 +82,11 @@ export const ResetStyle = css`
   mark,
   audio,
   video {
-    margin: 0;
     padding: 0;
-    border: 0;
+    margin: 0;
     font-size: 100%;
-    font-size: inherit;
     vertical-align: baseline;
+    border: 0;
   }
 
   article,
@@ -127,8 +126,8 @@ export const ResetStyle = css`
   }
 
   table {
-    border-collapse: collapse;
     border-spacing: 0;
+    border-collapse: collapse;
   }
 
   button {

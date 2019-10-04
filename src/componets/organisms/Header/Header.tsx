@@ -36,12 +36,12 @@ const LayoutWrapper = styled.nav`
 `
 
 const LayoutList = styled.ul`
-  min-width: 550px;
   display: flex;
   justify-content: space-around;
+  min-width: 550px;
 `
 
 const LayoutItem = styled.li`
-  cursor: pointer;
   font-family: 'Oswald', sans-serif;
+  cursor: pointer;
 `
