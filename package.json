@@ -9,9 +9,9 @@
     "build": "npm-run-all del:dist copy:static webpack:production",
     "webpack:production": "webpack --config webpack.prod.js",
     "commit": "commit",
-    "lint:ts": "eslint '**/*.ts{,x}'",
-    "lint:css": "stylelint --fix '**/*.ts{,x}'",
-    "lint:fix": "eslint --fix '**/*.ts{,x}'",
+    "lint:ts": "eslint \"**/*.ts{,x}\"",
+    "lint:css": "stylelint \"**/*.ts{,x}\"",
+    "lint:fix": "eslint --fix \"**/*.ts{,x}\"",
     "unit": "jest",
     "unit:watch": "jest --watch",
     "unit:coverage": "jest --coverage",
@@ -19,9 +19,9 @@
     "e2e:watch": "cross-env HEADLESS=false jest --config=jest.e2e.config.js",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
-    "copy:static": "cpx './src/static/**/*' './dist'",
-    "del:dist": "rimraf './dist'",
-    "sort:import": "import-sort --write '**/*.ts{,x}'"
+    "copy:static": "cpx \"./src/static/**/*\" \"./dist\"",
+    "del:dist": "rimraf \"./dist\"",
+    "sort:import": "import-sort --write \"**/*.ts{,x}\""
   },
   "repository": {
     "type": "git",
