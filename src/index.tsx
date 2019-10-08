@@ -1,9 +1,11 @@
 import * as React from 'react'
 
+import configureStore, { history } from './store/configureStore'
+
 import App from './App'
+import { ConnectedRouter } from 'connected-react-router'
 import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
-import configureStore from './store/configureStore'
 import { hot } from 'react-hot-loader/root'
 
 const MOUNT_NODE = document.getElementById('root')
@@ -19,7 +21,9 @@ if (process.env.DEBUG_ENV === 'enable') {
 
 const Root = hot(() => (
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>
 ))
 
