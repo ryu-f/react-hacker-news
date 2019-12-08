@@ -1,5 +1,5 @@
 import BasicText from '@/componets/atoms/BasicText'
-import { State as NewsState } from '@/store/modules/domain/news'
+import { NewsState } from '@/store/modules/domain/news'
 import React from 'react'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'

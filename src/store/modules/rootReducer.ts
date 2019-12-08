@@ -1,5 +1,5 @@
-import { State as DeviceState, reducer as deviceReducer } from './ui/device'
-import { State as NewsState, reducer as newsReducer } from './domain/news'
+import { DeviceState, reducer as deviceReducer } from './ui/device'
+import { NewsState, reducer as newsReducer } from './domain/news'
 import { RouterState, connectRouter } from 'connected-react-router'
 
 import { History } from 'history'

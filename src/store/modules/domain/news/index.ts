@@ -6,4 +6,4 @@ import { State, reducer } from './reducer'
 
 export { newsSelectors, newsActions, NEWS_TYPES, reducer }
 
-export type State = State
+export type NewsState = State

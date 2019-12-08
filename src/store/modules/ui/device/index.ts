@@ -6,4 +6,4 @@ import { State, reducer } from './reducer'
 
 export { deviceSelectors, deviceActions, DEVICE_TYPES, reducer }
 
-export type State = State
+export type DeviceState = State

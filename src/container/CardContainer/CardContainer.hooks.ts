@@ -1,4 +1,4 @@
-import { State as NewsState } from '@/store/modules/domain/news'
+import { NewsState } from '@/store/modules/domain/news'
 import { newsSelectors } from '@/store/modules/domain/news'
 import { useSelector } from 'react-redux'
 

@@ -1,9 +1,4 @@
-import {
-  NEWS_TYPES,
-  State as NewsState,
-  newsActions,
-  newsSelectors
-} from '@/store/modules/domain/news'
+import { NEWS_TYPES, NewsState, newsActions, newsSelectors } from '@/store/modules/domain/news'
 import { call, fork, put, select, take, takeEvery } from 'redux-saga/effects'
 
 import getFeed from '@/services/hn/getFeed'
