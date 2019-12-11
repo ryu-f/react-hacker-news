@@ -1,0 +1,7 @@
+dist/
+
+coverage/
+
+sw.*
+
+node_modules

@@ -27,15 +27,12 @@ type AccArguments = (literals: TemplateStringsArray, ...placeholders: any[]) => 
  * `
  * ```
  */
-export const media = Object.keys(mediaQuery).reduce(
-  (acc, label) => {
-    acc[label] = (literals: TemplateStringsArray, ...placeholders: any[]) =>
-      css`
-        @media (${mediaQuery[label]}) {
-          ${css(literals, ...placeholders)};
-        }
-      `.join('')
-    return acc
-  },
-  {} as Record<keyof typeof mediaQuery, AccArguments> & { [key: string]: AccArguments }
-)
+export const media = Object.keys(mediaQuery).reduce((acc, label) => {
+  acc[label] = (literals: TemplateStringsArray, ...placeholders: any[]) =>
+    css`
+      @media (${mediaQuery[label]}) {
+        ${css(literals, ...placeholders)};
+      }
+    `.join('')
+  return acc
+}, {} as Record<keyof typeof mediaQuery, AccArguments> & { [key: string]: AccArguments })
