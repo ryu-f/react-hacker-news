@@ -1,9 +1,9 @@
-import { DeviceState, reducer as deviceReducer } from './ui/device'
-import { NewsState, reducer as newsReducer } from './domain/news'
 import { RouterState, connectRouter } from 'connected-react-router'
+import deviceReducer, { DeviceState } from './ui/device/slice'
+import newsReducer, { NewsState } from './domain/news/slice'
 
 import { History } from 'history'
-import { combineReducers } from 'redux'
+import { combineReducers } from '@reduxjs/toolkit'
 
 export interface RootState {
   news: NewsState
