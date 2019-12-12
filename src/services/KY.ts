@@ -12,7 +12,5 @@ export default {
    */
   get(url: string | Request | URL, options?: Omit<Options, 'body'>) {
     return API.get(url, options)
-      .json()
-      .catch(error => error)
   }
 }

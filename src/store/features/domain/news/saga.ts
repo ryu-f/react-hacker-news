@@ -4,6 +4,9 @@ import { getFeedItem, selectFeedType } from '@/store/features/domain/news/slice'
 import getFeed from '@/services/hn/getFeed'
 import { getNews } from '@/store/features/domain/news/selector'
 
+/**
+ * fetch api
+ */
 function* fetchFeedItemSaga() {
   const state = getNews(yield select())
   const { selectedType, paging } = state
@@ -15,11 +18,18 @@ function* selectFeedTypeSaga(action: any) {
   yield fork(getFeedItemSaga)
 }
 
+/**
+ * get api response & diapatch
+ */
 function* getFeedItemSaga() {
   const feedItem = yield call(fetchFeedItemSaga)
-  yield put(getFeedItem(feedItem))
+  const response = yield feedItem.json()
+  yield put(getFeedItem(response))
 }
 
+/**
+ * whether the pathname matches the state
+ */
 function* searchPageParamSaga() {
   const pathname = window.location.pathname
   const state = getNews(yield select())
@@ -29,12 +39,18 @@ function* searchPageParamSaga() {
   return isExist ? target : null
 }
 
+/**
+ * check location pathname
+ */
 function* launchProcessSaga() {
   const isPageParam = yield call(searchPageParamSaga)
   if (isPageParam) return yield put(selectFeedType(isPageParam))
   yield fork(getFeedItemSaga)
 }
 
+/**
+ * init & takeEvery
+ */
 export default function*() {
   yield takeEvery('news/selectFeedType', selectFeedTypeSaga)
   while (yield take('INIT')) {
