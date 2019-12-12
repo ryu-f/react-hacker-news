@@ -1,10 +1,10 @@
-import { applyMiddleware, compose, createStore } from 'redux'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
 import { createBrowserHistory } from 'history'
 import createSagaMiddleware from 'redux-saga'
 import logger from 'redux-logger'
-import rootReducer from './modules/rootReducer'
-import rootSaga from './sagas/rootSaga'
+import rootReducer from './rootReducer'
+import rootSaga from './rootSaga'
 import { routerMiddleware } from 'connected-react-router'
 
 export const history = createBrowserHistory()
@@ -14,6 +14,9 @@ const sagaMiddleware = createSagaMiddleware()
 const middlewares: any[] = []
 
 if (env !== 'production') {
+  middlewares.push(
+    ...getDefaultMiddleware({ thunk: false, immutableCheck: true, serializableCheck: true })
+  )
   middlewares.push(logger)
   middlewares.push(sagaMiddleware)
   middlewares.push(routerMiddleware(history))
@@ -22,17 +25,13 @@ if (env !== 'production') {
   middlewares.push(sagaMiddleware)
 }
 
-const composeEnhancers =
-  typeof window === 'object' && ((window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ as any)
-    ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
-    : compose
-const enhancer = composeEnhancers(applyMiddleware(...middlewares))
+const store = configureStore({
+  reducer: rootReducer(history),
+  middleware: [...middlewares],
+  devTools: env !== 'production'
+})
 
-const configureStore = () => {
-  const store = createStore(rootReducer(history), enhancer)
-  sagaMiddleware.run(rootSaga)
-  store.dispatch({ type: 'INIT' })
-  return store
-}
+sagaMiddleware.run(rootSaga)
+store.dispatch({ type: 'INIT' })
 
-export default configureStore
+export default store

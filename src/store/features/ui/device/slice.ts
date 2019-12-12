@@ -12,7 +12,7 @@ const initialState: DeviceState = {
   device: 'desktop'
 }
 
-export const deviceSlice = createSlice({
+export const slice = createSlice({
   name: 'device',
   initialState,
   reducers: {
@@ -22,6 +22,6 @@ export const deviceSlice = createSlice({
   }
 })
 
-export const { setDevice } = deviceSlice.actions
+export const { setDevice } = slice.actions
 
-export default deviceSlice.reducer
+export default slice.reducer

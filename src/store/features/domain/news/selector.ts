@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 
 import { NewsState } from './slice'
-import { RootState } from '@/store/modules/rootReducer'
+import { RootState } from '@/store/rootReducer'
 
 export const getNews = (state: RootState) => state.news
 

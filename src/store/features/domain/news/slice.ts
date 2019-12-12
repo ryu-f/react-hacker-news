@@ -8,13 +8,9 @@ export type NewsState = {
   paging: number
 }
 
-type GetFeedItem = {
-  feedItem: NewsState['feedItem']
-}
+type GetFeedItem = NewsState['feedItem']
 
-type SelectFeedType = {
-  type: NewsState['selectedType']
-}
+type SelectFeedType = NewsState['selectedType']
 
 const initialState: NewsState = {
   types: ['news', 'newest', 'ask', 'show', 'jobs'],
@@ -23,19 +19,19 @@ const initialState: NewsState = {
   paging: 1
 }
 
-export const newsSlice = createSlice({
+export const slice = createSlice({
   name: 'news',
   initialState,
   reducers: {
     getFeedItem(state, action: PayloadAction<GetFeedItem>) {
-      state.feedItem = action.payload.feedItem
+      state.feedItem = action.payload
     },
     selectFeedType(state, action: PayloadAction<SelectFeedType>) {
-      state.selectedType = action.payload.type
+      state.selectedType = action.payload
     }
   }
 })
 
-export const { getFeedItem, selectFeedType } = newsSlice.actions
+export const { getFeedItem, selectFeedType } = slice.actions
 
-export default newsSlice.reducer
+export default slice.reducer

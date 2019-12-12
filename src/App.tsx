@@ -1,15 +1,15 @@
 import * as React from 'react'
 
-import CardContainer from '@/container/CardContainer'
+import CardList from '@/componets/organisms/CardList'
 import { GlobalStyle } from './styles'
-import HeaderContainer from '@/container/HeaderContainer'
+import Header from '@/componets/organisms/Header'
 
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <HeaderContainer />
-      <CardContainer />
+      <Header />
+      <CardList />
     </>
   )
 }

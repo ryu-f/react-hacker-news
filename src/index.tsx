@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import configureStore, { history } from './store/configureStore'
+import store, { history } from './store/configureStore'
 
 import App from './App'
 import { ConnectedRouter } from 'connected-react-router'
@@ -9,7 +9,6 @@ import ReactDOM from 'react-dom'
 import { hot } from 'react-hot-loader/root'
 
 const MOUNT_NODE = document.getElementById('root')
-const store = configureStore()
 
 if (!MOUNT_NODE) throw new Error('<div id="root" /> not found')
 

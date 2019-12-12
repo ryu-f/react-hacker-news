@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects'
-import initSaga from './initSaga'
+import newsSaga from './features/domain/news/saga'
 
 export default function* rootSaga() {
-  yield all([initSaga()])
+  yield all([newsSaga()])
 }

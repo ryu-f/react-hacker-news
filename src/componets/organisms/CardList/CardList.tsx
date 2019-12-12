@@ -2,20 +2,18 @@ import * as React from 'react'
 
 import BasicText from '@/componets/atoms/BasicText'
 import Card from '@/componets/organisms/Card'
-import { FeedItem } from '@/types/domain/hn'
+import { RootState } from '@/store/rootReducer'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
 
-type Props = {
-  cards: FeedItem[]
-}
-
-export const CardList: React.FC<Props> = ({ cards }) => {
-  if (!cards.length) return null
+export const CardList: React.FC = () => {
+  const { feedItem } = useSelector((state: RootState) => state.news)
+  if (!feedItem.length) return null
 
   return (
     <LayoutGrid>
-      {cards.map((card, i) => (
+      {feedItem.map((card, i) => (
         <LayoutItem>
           <Card key={`card-${i}`}>
             {[
