@@ -1,6 +1,11 @@
 import KY from '@/services/KY'
 
-export default function({ type, paging }: { type: string; paging: number }) {
+type Parameter = {
+  type: string
+  paging: number
+}
+
+export default ({ type, paging }: Parameter) => {
   const url = `${type}/${paging}.json`
   return KY.get(url)
 }

@@ -32,6 +32,6 @@ export const slice = createSlice({
   }
 })
 
-export const { getFeedItem, selectFeedType } = slice.actions
+export const { actions: newsActions } = slice
 
 export default slice.reducer

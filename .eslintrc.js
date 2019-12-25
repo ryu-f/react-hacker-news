@@ -4,36 +4,47 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    'sourceType': 'module',
-    'project': './tsconfig.json',
-    'ecmaFeatures': {
-      'jsx': true
+    sourceType: 'module',
+    project: './tsconfig.json',
+    ecmaFeatures: {
+      jsx: true
     }
   },
-  extends: ['plugin:prettier/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:react/recommended'
+  ],
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jest'],
   env: {
     node: true,
     jest: true,
-    browser: true,
+    browser: true
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'complexity': ['warn', 10],
+    complexity: ['warn', 10],
     'react-hooks/rules-of-hooks': 'error',
-    'jest/no-disabled-tests': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'prettier/prettier': [
-      'warn',
+    '@typescript-eslint/member-delimiter-style': [
+      'error',
       {
-        useTabs: false,
-        printWidth: 100,
-        semi: false,
-        tabWidth: 2,
-        singleQuote: true,
-        trailingComma: 'none'
+        multiline: {
+          delimiter: 'none',
+          requireLast: false
+        },
+        singleline: {
+          delimiter: 'comma',
+          requireLast: false
+        }
       }
-    ]
+    ],
+    'react/display-name': 'off',
+    'react/prop-types': 'off',
+    'jest/no-disabled-tests': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
   globals: {
     page: true,

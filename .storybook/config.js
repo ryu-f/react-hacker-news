@@ -5,7 +5,7 @@ const req = require.context('../src', true, /\.stories\.tsx$/)
 
 function loadStories() {
   addDecorator(withInfo)
-  req.keys().forEach((filename) => req(filename))
+  req.keys().forEach(filename => req(filename))
 }
 
 configure(loadStories, module)

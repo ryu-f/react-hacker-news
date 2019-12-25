@@ -14,10 +14,10 @@ export const CardList: React.FC = () => {
   return (
     <LayoutGrid>
       {feedItem.map((card, i) => (
-        <LayoutItem>
-          <Card key={`card-${i}`}>
+        <LayoutItem key={`card-${i}`}>
+          <Card>
             {[
-              <PrimaryArea>{card.title}</PrimaryArea>,
+              <PrimaryArea key={`card-${i}`}>{card.title}</PrimaryArea>,
 
               card.user ? (
                 <HeadLine size={'BASE'} color={'GLAY'}>

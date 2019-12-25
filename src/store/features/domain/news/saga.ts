@@ -10,12 +10,8 @@ import { getNews } from '@/store/features/domain/news/selector'
 function* fetchFeedItemSaga() {
   const state = getNews(yield select())
   const { selectedType, paging } = state
-  return yield call(getFeed, { type: selectedType, paging })
-}
-
-function* selectFeedTypeSaga(action: any) {
-  yield put(selectFeedType(action.payload))
-  yield fork(getFeedItemSaga)
+  const response = yield call(getFeed, { type: selectedType, paging })
+  return response
 }
 
 /**
@@ -25,6 +21,11 @@ function* getFeedItemSaga() {
   const feedItem = yield call(fetchFeedItemSaga)
   const response = yield feedItem.json()
   yield put(getFeedItem(response))
+}
+
+function* selectFeedTypeSaga(action: any) {
+  yield put(selectFeedType(action.payload))
+  yield fork(getFeedItemSaga)
 }
 
 /**
