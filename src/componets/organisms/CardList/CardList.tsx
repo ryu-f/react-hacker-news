@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux'
 
 export const CardList: React.FC = () => {
   const { feedItem } = useSelector((state: RootState) => state.news)
-  if (!feedItem.length) return null
 
   return (
     <LayoutGrid>

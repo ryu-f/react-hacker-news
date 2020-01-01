@@ -1,8 +1,8 @@
 import { call, fork, put, select, take, takeEvery } from 'redux-saga/effects'
-import { getFeedItem, selectFeedType } from '@/store/features/domain/news/slice'
 
 import getFeed from '@/services/hn/getFeed'
 import { getNews } from '@/store/features/domain/news/selector'
+import { newsActions } from './slice'
 
 /**
  * fetch api
@@ -20,11 +20,11 @@ function* fetchFeedItemSaga() {
 function* getFeedItemSaga() {
   const feedItem = yield call(fetchFeedItemSaga)
   const response = yield feedItem.json()
-  yield put(getFeedItem(response))
+  yield put(newsActions.getFeedItem(response))
 }
 
 function* selectFeedTypeSaga(action: any) {
-  yield put(selectFeedType(action.payload))
+  yield put(newsActions.selectFeedType(action.payload))
   yield fork(getFeedItemSaga)
 }
 
@@ -45,7 +45,7 @@ function* searchPageParamSaga() {
  */
 function* launchProcessSaga() {
   const isPageParam = yield call(searchPageParamSaga)
-  if (isPageParam) return yield put(selectFeedType(isPageParam))
+  if (isPageParam) return yield put(newsActions.selectFeedType(isPageParam))
   yield fork(getFeedItemSaga)
 }
 
