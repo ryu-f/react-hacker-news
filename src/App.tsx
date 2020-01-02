@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import CardList from '@/componets/organisms/CardList'
+import FeedCardList from '@/componets/organisms/FeedCardList'
 import { GlobalStyle } from './styles'
 import Header from '@/componets/organisms/Header'
 
@@ -9,7 +9,7 @@ const App: React.FC = () => {
     <>
       <GlobalStyle />
       <Header />
-      <CardList />
+      <FeedCardList />
     </>
   )
 }

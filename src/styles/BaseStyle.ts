@@ -8,6 +8,7 @@ export const BaseStyle = css`
 
   body {
     font-family: 'Roboto', 'Oswald', sans-serif;
+    word-break: break-all;
     background-color: ${BACKGROUND_COLOR.GLAY};
   }
 `

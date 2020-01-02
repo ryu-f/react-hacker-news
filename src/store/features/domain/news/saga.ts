@@ -19,8 +19,7 @@ function* fetchFeedItemSaga() {
  */
 function* getFeedItemSaga() {
   const feedItem = yield call(fetchFeedItemSaga)
-  const response = yield feedItem.json()
-  yield put(newsActions.getFeedItem(response))
+  yield put(newsActions.getFeedItem(feedItem))
 }
 
 function* selectFeedTypeSaga(action: any) {

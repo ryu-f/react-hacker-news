@@ -16,7 +16,7 @@ export const slice = createSlice({
   name: 'device',
   initialState,
   reducers: {
-    setDevice(state, action: PayloadAction<SetDevice>) {
+    setDevice(state, action: PayloadAction<SetDevice>): void {
       state.device = action.payload.device
     }
   }

@@ -1,6 +1,7 @@
 import KY from '@/services/KY'
+import { User } from '@/types/domain/hn'
 
-export default function({ name }: { name: string }) {
+export default ({ name }: { name: string }) => {
   const url = `user/${name}.json`
-  return KY.get(url)
+  return KY.get(url).json<User>()
 }
