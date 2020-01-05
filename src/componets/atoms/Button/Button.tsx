@@ -18,28 +18,29 @@ interface AnchorProps extends Props, React.AnchorHTMLAttributes<HTMLAnchorElemen
     | undefined
 }
 
-export const BasicButton: React.FC<Props> = ({ size, textColor, children, onClick, ...props }) => (
-  <View size={size} textColor={textColor} onClick={onClick} {...props}>
-    {children}
-  </View>
-)
+export const Button: React.FC<Props | AnchorProps> = props => {
+  const { size, textColor, children, onClick } = props
 
-export const AnchorButton: React.FC<AnchorProps> = ({
-  size,
-  textColor,
-  href,
-  children,
-  onClick,
-  ...props
-}) => (
-  <AnchorButtonView size={size} textColor={textColor} href={href} onClick={onClick} {...props}>
-    {children}
-  </AnchorButtonView>
-)
+  if ('href' in props) {
+    const { href, onClick } = props
 
-const View = styled.button<Props>`
+    return (
+      <AnchorView size={size} textColor={textColor} href={href} onClick={onClick} {...props}>
+        {children}
+      </AnchorView>
+    )
+  }
+
+  return (
+    <ButtonView size={size} textColor={textColor} onClick={onClick} {...props}>
+      {children}
+    </ButtonView>
+  )
+}
+
+const ButtonView = styled.button<Props>`
   font-size: ${({ size }) => FONT_SIZE[size]}px;
   color: ${({ textColor }) => COLOR[textColor]};
 `
 
-const AnchorButtonView = View.withComponent('a')
+const AnchorView = ButtonView.withComponent('a')

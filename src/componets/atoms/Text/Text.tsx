@@ -6,17 +6,40 @@ import styled from 'styled-components'
 
 type Props = {
   size: 'BASE' | 'SMALL' | 'LARGE'
-  color: 'BLACK' | 'WHITE' | 'GLAY'
-  href?: string
+  textColor: 'BLACK' | 'WHITE' | 'GLAY'
 }
 
-export const BasicText: React.FC<Props> = ({ children, size, color, href }) => (
-  <Component size={size} color={color} href={href}>
-    {children}
-  </Component>
-)
+interface AnchorProps extends Props, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string
+}
 
-const Component = styled.p<Props>`
+interface HeadingProps extends Props, React.ParamHTMLAttributes<HTMLHeadingElement> {
+  level: 1 | 2 | 3 | 4 | 5 | 6
+}
+
+export const Text: React.FC<Props | AnchorProps | HeadingProps> = props => {
+  const { size, textColor, children } = props
+
+  if ('href' in props) {
+    const { href } = props
+
+    return (
+      <AnchorView size={size} textColor={textColor} href={href}>
+        {children}
+      </AnchorView>
+    )
+  }
+
+  return (
+    <TextView size={size} textColor={textColor}>
+      {children}
+    </TextView>
+  )
+}
+
+const TextView = styled.p<Props>`
   font-size: ${({ size }) => FONT_SIZE[size]}px;
-  color: ${({ color }) => COLOR[color]};
+  color: ${({ textColor }) => COLOR[textColor]};
 `
+
+const AnchorView = TextView.withComponent('a')

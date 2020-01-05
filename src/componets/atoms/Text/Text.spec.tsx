@@ -2,18 +2,18 @@ import '@testing-library/jest-dom/extend-expect'
 
 import * as React from 'react'
 
-import BasicText from '.'
+import { Text } from './'
 import { render } from '@testing-library/react'
 
 const size = 'BASE'
-const color = 'BLACK'
+const textColor = 'BLACK'
 
-describe('BasicText', () => {
-  test('renders BasicText with text', () => {
+describe('Text', () => {
+  test('renders Text with text', () => {
     const { getByText } = render(
-      <BasicText size={size} color={color}>
+      <Text size={size} textColor={textColor}>
         Test
-      </BasicText>
+      </Text>
     )
     getByText('Test')
   })

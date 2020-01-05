@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { BasicText } from '@/componets/atoms/Text'
 import { RootState } from '@/store/rootReducer'
+import { Text } from '@/componets/atoms/Text'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
@@ -22,9 +22,9 @@ export const Header: React.FC = () => {
       <LayoutList>
         {types.map((type, i) => (
           <LayoutItem key={`item-${i}`} onClick={() => itemOnClick(type)}>
-            <BasicText size={'BASE'} color={'WHITE'}>
+            <Text size={'BASE'} textColor={'WHITE'}>
               {type}
-            </BasicText>
+            </Text>
           </LayoutItem>
         ))}
       </LayoutList>
