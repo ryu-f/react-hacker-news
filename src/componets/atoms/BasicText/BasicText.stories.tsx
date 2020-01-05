@@ -1,13 +1,16 @@
 import * as React from 'react'
 
 import BasicText from './'
-import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 
-const components = storiesOf('Atom', module)
+export default {
+  title: 'Atom|BasicText',
+  parameters: {
+    component: BasicText
+  }
+}
 
-components.addDecorator(withInfo({ inline: true })).add('BasicText', () => (
+export const normal = () => (
   <BasicText size={'BASE'} color={'BLACK'}>
     test
   </BasicText>
-))
+)

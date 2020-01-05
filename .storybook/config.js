@@ -1,11 +1,6 @@
 import { configure, addDecorator } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
-const req = require.context('../src', true, /\.stories\.tsx$/)
+addDecorator(withInfo)
 
-function loadStories() {
-  addDecorator(withInfo)
-  req.keys().forEach(filename => req(filename))
-}
-
-configure(loadStories, module)
+configure(require.context('../src', true, /\.stories\.tsx$/), module)
