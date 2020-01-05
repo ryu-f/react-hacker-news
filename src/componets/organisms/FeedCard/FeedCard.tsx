@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import BasicText from '@/componets/atoms/BasicText'
+import { BasicText } from '@/componets/atoms/Text'
 import { FeedItem } from '@/types/domain/hn'
 import styled from 'styled-components'
 

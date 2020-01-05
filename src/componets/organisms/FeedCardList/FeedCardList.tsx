@@ -10,9 +10,15 @@ const LazyFeedCard = React.lazy(() => import('@/componets/organisms/FeedCard'))
 export const FeedCardList: React.FC = () => {
   const { feedItem } = useSelector((state: RootState) => state.news)
 
+  const Loading = () => (
+    <LayoutLoading>
+      <p>loading...</p>
+    </LayoutLoading>
+  )
+
   return (
     <LayoutGrid>
-      <React.Suspense fallback={<p>loading...</p>}>
+      <React.Suspense fallback={Loading}>
         {feedItem.map((card, i) => (
           <LayoutItem key={`card-${i}`}>
             <LazyFeedCard feed={card} />
@@ -34,3 +40,10 @@ const LayoutGrid = styled.ul`
 `
 
 const LayoutItem = styled.li``
+
+const LayoutLoading = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`

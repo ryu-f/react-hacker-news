@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import BasicText from './'
+import { withInfo } from '@storybook/addon-info'
 
 export default {
   title: 'Atom|BasicText',
@@ -9,8 +10,11 @@ export default {
   }
 }
 
-export const normal = () => (
+export const basic = () => (
   <BasicText size={'BASE'} color={'BLACK'}>
     test
   </BasicText>
 )
+basic.story = {
+  decorators: [withInfo({ inline: true })]
+}

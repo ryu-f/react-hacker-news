@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import BasicText from '@/componets/atoms/BasicText'
+import { BasicText } from '@/componets/atoms/Text'
 import { RootState } from '@/store/rootReducer'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'

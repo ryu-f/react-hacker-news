@@ -25,10 +25,10 @@ module.exports = {
     browser: true
   },
   rules: {
+    complexity: ['warn', 10],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    complexity: ['warn', 10],
-    'react-hooks/rules-of-hooks': 'error',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
@@ -44,6 +44,7 @@ module.exports = {
     ],
     'react/display-name': 'off',
     'react/prop-types': 'off',
+    'react-hooks/rules-of-hooks': 'error',
     'jest/no-disabled-tests': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
   globals: {

@@ -23,10 +23,10 @@ export const slice = createSlice({
   name: 'news',
   initialState,
   reducers: {
-    getFeedItem(state, action: PayloadAction<GetFeedItem>): void {
+    getFeedItem(state, action: PayloadAction<GetFeedItem>) {
       state.feedItem = action.payload
     },
-    selectFeedType(state, action: PayloadAction<SelectFeedType>): void {
+    selectFeedType(state, action: PayloadAction<SelectFeedType>) {
       state.selectedType = action.payload
     }
   }

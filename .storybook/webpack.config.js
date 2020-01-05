@@ -1,5 +1,4 @@
 const path = require('path')
-const TSDocgenPlugin = require('react-docgen-typescript-webpack-plugin')
 
 module.exports = ({ config }) => {
   config.module.rules.push({
@@ -10,11 +9,13 @@ module.exports = ({ config }) => {
         options: {
           presets: [['react-app', { flow: false, typescript: true }]]
         }
+      },
+      {
+        loader: require.resolve('react-docgen-typescript-loader')
       }
     ]
   })
   config.resolve.extensions.push('.ts', '.tsx')
   config.resolve.alias['@'] = path.resolve(__dirname, '../src')
-  config.plugins.push(new TSDocgenPlugin())
   return config
 }
