@@ -14,11 +14,15 @@ export const FeedCard: React.FC<Props> = ({ feed }) => (
     <PrimaryArea>{feed.title}</PrimaryArea>
     {feed.user ? (
       <LayoutPerson>
-        <PersonText text={{ size: 'BASE', textColor: 'GLAY' }}>by {feed.user}</PersonText>
+        <PersonText text={{ to: '/dummy', size: 'BASE', textColor: 'GLAY' }}>
+          by {feed.user}
+        </PersonText>
       </LayoutPerson>
     ) : null}
     <FootArea>
-      <ClockText text={{ size: 'SMALL', textColor: 'GLAY' }}>by {feed.time_ago}</ClockText>
+      <ClockText text={{ to: '/dummy', size: 'SMALL', textColor: 'GLAY' }}>
+        by {feed.time_ago}
+      </ClockText>
     </FootArea>
   </Wrapper>
 )

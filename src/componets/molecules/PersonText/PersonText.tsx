@@ -1,12 +1,12 @@
 import * as React from 'react'
 
-import { ComponentProps, Text } from '@/componets/atoms/Text'
+import { LinkText, LinkTextProps } from '@/componets/atoms/Text'
 
 import { SvgIcons } from '@/componets/atoms/SvgIcons'
 import styled from 'styled-components'
 
 type Props = {
-  text: ComponentProps
+  text: LinkTextProps
 }
 
 export const PersonText: React.FC<Props> = props => {
@@ -19,9 +19,9 @@ export const PersonText: React.FC<Props> = props => {
       </LayoutIcon>
 
       <LayoutText>
-        <Text size={text.size} textColor={text.textColor} {...text}>
+        <LinkText size={text.size} textColor={text.textColor} {...text}>
           {children}
-        </Text>
+        </LinkText>
       </LayoutText>
     </Wrapper>
   )

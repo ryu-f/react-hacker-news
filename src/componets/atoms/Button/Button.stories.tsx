@@ -1,19 +1,19 @@
 import * as React from 'react'
 
-import { Button } from './'
+import { BasicButton } from './'
 import { withInfo } from '@storybook/addon-info'
 
 export default {
   title: 'Atom|Button',
   parameters: {
-    component: Button
+    component: BasicButton
   }
 }
 
 export const basic = () => (
-  <Button size={'BASE'} textColor={'BLACK'}>
+  <BasicButton size={'BASE'} textColor={'BLACK'}>
     test
-  </Button>
+  </BasicButton>
 )
 basic.story = {
   decorators: [withInfo({ inline: true })]
