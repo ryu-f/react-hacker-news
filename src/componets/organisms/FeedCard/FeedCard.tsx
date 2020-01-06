@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import { ClockText } from '@/componets/molecules/ClockText'
 import { FeedItem } from '@/types/domain/hn'
 import { PersonText } from '@/componets/molecules/PersonText'
 import styled from 'styled-components'
@@ -16,6 +17,9 @@ export const FeedCard: React.FC<Props> = ({ feed }) => (
         <PersonText text={{ size: 'BASE', textColor: 'GLAY' }}>by {feed.user}</PersonText>
       </LayoutPerson>
     ) : null}
+    <FootArea>
+      <ClockText text={{ size: 'SMALL', textColor: 'GLAY' }}>by {feed.time_ago}</ClockText>
+    </FootArea>
   </Wrapper>
 )
 
@@ -38,4 +42,9 @@ const PrimaryArea = styled.div`
 
 const LayoutPerson = styled.div`
   margin-top: 5px;
+`
+
+const FootArea = styled.div`
+  display: flex;
+  margin-top: 10px;
 `
