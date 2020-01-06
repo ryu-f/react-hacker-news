@@ -23,7 +23,7 @@ interface AnchorProps extends Props, React.AnchorHTMLAttributes<HTMLAnchorElemen
 
 interface LinkProps extends Props, RouteComponentProps {}
 
-type ComponentProps = ButtonProps | AnchorProps | LinkProps
+export type ComponentProps = ButtonProps | AnchorProps | LinkProps
 
 // jsx
 ////////////////////////////////////////////////////////////

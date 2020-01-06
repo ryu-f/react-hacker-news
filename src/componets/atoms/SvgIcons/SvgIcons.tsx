@@ -1,15 +1,26 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
+
 interface Props extends React.SVGAttributes<SVGElement> {
-  id: string
+  id: 'person'
 }
 
 export const SvgIcons: React.FC<Props> = props => {
   const { id } = props
 
   return (
-    <svg {...props}>
+    <View {...props}>
       <use xlinkHref={`img/icon/icons.svg#${id}`}></use>
-    </svg>
+    </View>
   )
 }
+
+const View = styled.svg`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+`

@@ -22,7 +22,7 @@ interface HeadingProps extends Props, React.ParamHTMLAttributes<HTMLHeadingEleme
 
 interface LinkProps extends Props, RouteComponentProps {}
 
-type ComponentProps = Props | AnchorProps | HeadingProps | LinkProps
+export type ComponentProps = Props | AnchorProps | HeadingProps | LinkProps
 
 // jsx
 ////////////////////////////////////////////////////////////

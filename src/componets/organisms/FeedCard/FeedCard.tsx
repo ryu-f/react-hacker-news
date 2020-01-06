@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { FeedItem } from '@/types/domain/hn'
-import { Text } from '@/componets/atoms/Text'
+import { PersonText } from '@/componets/molecules/PersonText'
 import styled from 'styled-components'
 
 type Props = {
@@ -12,9 +12,9 @@ export const FeedCard: React.FC<Props> = ({ feed }) => (
   <Wrapper>
     <PrimaryArea>{feed.title}</PrimaryArea>
     {feed.user ? (
-      <HeadLine size={'BASE'} textColor={'GLAY'}>
-        by {feed.user}
-      </HeadLine>
+      <LayoutPerson>
+        <PersonText text={{ size: 'BASE', textColor: 'GLAY' }}>by {feed.user}</PersonText>
+      </LayoutPerson>
     ) : null}
   </Wrapper>
 )
@@ -36,6 +36,6 @@ const PrimaryArea = styled.div`
   line-height: 1.2;
 `
 
-const HeadLine = styled(Text)`
-  margin-top: 20px;
+const LayoutPerson = styled.div`
+  margin-top: 5px;
 `
