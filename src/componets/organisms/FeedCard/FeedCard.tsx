@@ -14,7 +14,7 @@ export const FeedCard: React.FC<Props> = ({ feed }) => (
     <PrimaryArea>{feed.title}</PrimaryArea>
     {feed.user ? (
       <LayoutPerson>
-        <PersonText text={{ to: '/dummy', size: 'BASE', textColor: 'GLAY' }}>
+        <PersonText text={{ to: `/user/${feed.user}`, size: 'BASE', textColor: 'GLAY' }}>
           by {feed.user}
         </PersonText>
       </LayoutPerson>
