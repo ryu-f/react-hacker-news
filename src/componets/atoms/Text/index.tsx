@@ -1,3 +1,4 @@
-export { BasicTextProps, BasicText } from './BasicText'
-export { AnchorTextProps, AnchorText } from './AnchorText'
-export { LinkTextProps, LinkText } from './LinkText'
+export { BasicText } from './BasicText'
+export { AnchorText } from './AnchorText'
+export { LinkText } from './LinkText'
+export { BaloonText } from './BaloonText'

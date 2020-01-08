@@ -4,7 +4,7 @@ import { BaseProps, BaseStyle } from './_Base'
 
 // type
 ////////////////////////////////////////////////////////////
-export interface AnchorTextProps extends BaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+interface AnchorTextProps extends BaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
 }
 

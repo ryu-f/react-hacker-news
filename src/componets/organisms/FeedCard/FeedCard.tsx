@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { BasicText, LinkText } from '@/componets/atoms/Text'
+import { BaloonText, BasicText, LinkText } from '@/componets/atoms/Text'
 
 import { FeedItem } from '@/types/domain/hn'
 import { SvgIcons } from '@/componets/atoms/SvgIcons'
@@ -23,9 +23,9 @@ export const FeedCard: React.FC<Props> = ({ feed }) => (
         <BasicText size="SMALL" textColor="BLACK">
           by&nbsp;
         </BasicText>
-        <LinkText to={`/user/${feed.user}`} size="SMALL" textColor="GLAY">
+        <UserText to={`/user/${feed.user}`} size="SMALL" textColor="GLAY">
           {feed.user}
-        </LinkText>
+        </UserText>
       </LayoutPerson>
     ) : null}
     <FootArea>
@@ -37,6 +37,11 @@ export const FeedCard: React.FC<Props> = ({ feed }) => (
           {feed.time_ago}
         </BasicText>
       </LayoutTime>
+      {feed.comments_count > 0 && (
+        <CommentsCount size="SMALL" textColor="BLACK">
+          {feed.comments_count}
+        </CommentsCount>
+      )}
     </FootArea>
   </Wrapper>
 )
@@ -70,11 +75,24 @@ const LayoutPersonIcon = styled.div`
   margin-right: 5px;
 `
 
+const UserText = styled(LinkText)`
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+`
+
 const FootArea = styled.div`
   display: flex;
+  align-items: flex-start;
   margin-top: 10px;
 `
 
 const LayoutTime = styled.div`
   display: flex;
+`
+
+const CommentsCount = styled(BaloonText)`
+  line-height: 1;
 `

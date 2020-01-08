@@ -37,6 +37,10 @@ export const Reset = css`
     line-height: 1.5;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   a:not([class]) {
     text-decoration-skip-ink: auto;
   }

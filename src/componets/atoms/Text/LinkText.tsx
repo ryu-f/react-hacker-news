@@ -6,7 +6,7 @@ import { Link, LinkProps } from 'react-router-dom'
 // type
 ////////////////////////////////////////////////////////////
 
-export interface LinkTextProps extends BaseProps, LinkProps {
+interface LinkTextProps extends BaseProps, LinkProps {
   to: string
 }
 
