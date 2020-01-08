@@ -1,15 +1,23 @@
 import * as React from 'react'
 
-import FeedCardList from '@/componets/organisms/FeedCardList'
+import { Route, Switch } from 'react-router-dom'
+
 import { GlobalStyle } from './styles'
 import Header from '@/componets/organisms/Header'
+import { List } from '@/route/List'
+import { NoMatch } from '@/route/NoMatch'
 
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
       <Header />
-      <FeedCardList />
+      <main>
+        <Switch>
+          <Route path="/" component={List} exact />
+          <Route path="*" component={NoMatch} exact />
+        </Switch>
+      </main>
     </>
   )
 }
