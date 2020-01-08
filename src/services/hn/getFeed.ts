@@ -8,5 +8,5 @@ type Parameter = {
 
 export default ({ type, paging }: Parameter) => {
   const url = `${type}/${paging}.json`
-  return KY.get(url).json<FeedItem>()
+  return KY.get(url).json<FeedItem[]>()
 }

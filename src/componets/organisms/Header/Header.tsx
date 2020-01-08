@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { BasicText } from '@/componets/atoms/Text'
 import { RootState } from '@/store/rootReducer'
 import { media } from '@/styles/Mixin'
+import { selectFeedType } from '@/store/features/domain/news/operations'
 import styled from 'styled-components'
 
 export const Header: React.FC = () => {
@@ -12,7 +13,7 @@ export const Header: React.FC = () => {
 
   const itemOnClick = useCallback(
     (selected: string) => {
-      dispatch({ type: 'news/selectFeedType', payload: selected })
+      dispatch(selectFeedType(selected))
     },
     [dispatch]
   )

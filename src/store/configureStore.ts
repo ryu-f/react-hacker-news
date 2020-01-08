@@ -1,29 +1,24 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { Action, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import rootReducer, { RootState } from './rootReducer'
 
+import { ThunkAction } from 'redux-thunk'
 import { createBrowserHistory } from 'history'
-import createSagaMiddleware from 'redux-saga'
 import logger from 'redux-logger'
-import rootReducer from './rootReducer'
-import rootSaga from './rootSaga'
 import { routerMiddleware } from 'connected-react-router'
 
 export const history = createBrowserHistory()
 
 const env = process.env.NODE_ENV
-const sagaMiddleware = createSagaMiddleware()
 const middlewares: any[] = []
 
 if (env !== 'production') {
   middlewares.push(
-    ...getDefaultMiddleware({ thunk: false, immutableCheck: true, serializableCheck: true })
+    ...getDefaultMiddleware({ thunk: true, immutableCheck: true, serializableCheck: true })
   )
   middlewares.push(logger)
-  middlewares.push(sagaMiddleware)
-  middlewares.push(routerMiddleware(history))
-} else {
-  middlewares.push(routerMiddleware(history))
-  middlewares.push(sagaMiddleware)
 }
+
+middlewares.push(routerMiddleware(history))
 
 const store = configureStore({
   reducer: rootReducer(history),
@@ -31,7 +26,6 @@ const store = configureStore({
   devTools: env !== 'production'
 })
 
-sagaMiddleware.run(rootSaga)
-store.dispatch({ type: 'INIT' })
-
+export type AppDispatch = typeof store.dispatch
+export type AppThunk = ThunkAction<void, RootState, null, Action<string>>
 export default store

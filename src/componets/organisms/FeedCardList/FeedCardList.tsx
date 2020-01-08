@@ -1,30 +1,21 @@
 import * as React from 'react'
 
+import FeedCard from '@/componets/organisms/FeedCard'
 import { RootState } from '@/store/rootReducer'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 
-const LazyFeedCard = React.lazy(() => import('@/componets/organisms/FeedCard'))
-
 export const FeedCardList: React.FC = () => {
   const { feedItem } = useSelector((state: RootState) => state.news)
 
-  const Loading = () => (
-    <LayoutLoading>
-      <p>loading...</p>
-    </LayoutLoading>
-  )
-
   return (
     <LayoutGrid>
-      <React.Suspense fallback={Loading}>
-        {feedItem.map((card, i) => (
-          <LayoutItem key={`card-${i}`}>
-            <LazyFeedCard feed={card} />
-          </LayoutItem>
-        ))}
-      </React.Suspense>
+      {feedItem.map((card, i) => (
+        <LayoutItem key={`card-${i}`}>
+          <FeedCard feed={card} />
+        </LayoutItem>
+      ))}
     </LayoutGrid>
   )
 }
@@ -34,16 +25,9 @@ const LayoutGrid = styled.ul`
   ${media.desktop`
     grid-template-columns: repeat(auto-fit, 300px);
     justify-content: center;
-    padding: 80px 8vw;
+    padding: 80px 50px;
     grid-gap: 20px;
   `}
 `
 
 const LayoutItem = styled.li``
-
-const LayoutLoading = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`
