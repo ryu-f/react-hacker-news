@@ -1,8 +1,9 @@
 import * as React from 'react'
 
-import { ClockText } from '@/componets/molecules/ClockText'
+import { BasicText, LinkText } from '@/componets/atoms/Text'
+
 import { FeedItem } from '@/types/domain/hn'
-import { PersonText } from '@/componets/molecules/PersonText'
+import { SvgIcons } from '@/componets/atoms/SvgIcons'
 import styled from 'styled-components'
 
 type Props = {
@@ -11,18 +12,31 @@ type Props = {
 
 export const FeedCard: React.FC<Props> = ({ feed }) => (
   <Wrapper>
-    <PrimaryArea>{feed.title}</PrimaryArea>
+    <TitleText size="BASE" textColor="BLACK">
+      {feed.title}
+    </TitleText>
     {feed.user ? (
       <LayoutPerson>
-        <PersonText text={{ to: `/user/${feed.user}`, size: 'BASE', textColor: 'GLAY' }}>
-          by {feed.user}
-        </PersonText>
+        <LayoutPersonIcon>
+          <SvgIcons id={'person'} />
+        </LayoutPersonIcon>
+        <BasicText size="SMALL" textColor="BLACK">
+          by&nbsp;
+        </BasicText>
+        <LinkText to={`/user/${feed.user}`} size="SMALL" textColor="GLAY">
+          {feed.user}
+        </LinkText>
       </LayoutPerson>
     ) : null}
     <FootArea>
-      <ClockText text={{ to: '/dummy', size: 'SMALL', textColor: 'GLAY' }}>
-        by {feed.time_ago}
-      </ClockText>
+      <LayoutTime>
+        <LayoutPersonIcon>
+          <SvgIcons id={'clock'} />
+        </LayoutPersonIcon>
+        <BasicText size="SMALL" textColor="GLAY">
+          {feed.time_ago}
+        </BasicText>
+      </LayoutTime>
     </FootArea>
   </Wrapper>
 )
@@ -39,16 +53,28 @@ const Wrapper = styled.div`
     0 1px 3px 0 rgba(0, 0, 0, 0.12);
 `
 
-const PrimaryArea = styled.div`
+const TitleText = styled(BasicText)`
   width: 100%;
   line-height: 1.2;
 `
 
 const LayoutPerson = styled.div`
+  display: flex;
   margin-top: 5px;
+`
+
+const LayoutPersonIcon = styled.div`
+  position: relative;
+  width: 20px;
+  height: 22px;
+  margin-right: 5px;
 `
 
 const FootArea = styled.div`
   display: flex;
   margin-top: 10px;
+`
+
+const LayoutTime = styled.div`
+  display: flex;
 `
