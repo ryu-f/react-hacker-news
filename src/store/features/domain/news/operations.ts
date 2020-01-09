@@ -6,8 +6,8 @@ import { newsActions } from './slice'
  * get api response & diapatch
  */
 const fetchFeedItem = (): AppThunk => async (dispatch, getState) => {
-  const state = getState().news
-  const { selectedType, paging } = state
+  const { selectedType, paging } = getState().news
+
   try {
     const response = await getFeed({ type: selectedType, paging })
     dispatch(newsActions.getFeedItem(response))

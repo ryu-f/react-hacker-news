@@ -11,7 +11,7 @@ export default {
 }
 
 export const basic = () => (
-  <BasicButton size={'BASE'} textColor={'BLACK'}>
+  <BasicButton size={'BASE'} textcolor={'BLACK'}>
     test
   </BasicButton>
 )

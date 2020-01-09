@@ -4,10 +4,10 @@ import styled from 'styled-components'
 
 export type BaseProps = {
   size: 'BASE' | 'SMALL' | 'LARGE'
-  textColor: 'BLACK' | 'WHITE' | 'GLAY'
+  textcolor: 'BLACK' | 'WHITE' | 'GLAY'
 }
 
 export const BaseStyle = styled.p<BaseProps>`
   font-size: ${({ size }) => FONT_SIZE[size]}px;
-  color: ${({ textColor }) => COLOR[textColor]};
+  color: ${({ textcolor }) => COLOR[textcolor]};
 `

@@ -1,13 +1,10 @@
 import * as React from 'react'
 
-import { Route, Switch } from 'react-router-dom'
-
 import { GlobalStyle } from './styles'
 import Header from '@/componets/organisms/Header'
 import { Helmet } from 'react-helmet'
-import { List } from '@/route/List'
-import { NoMatch } from '@/route/NoMatch'
-import { User } from '@/route/User'
+import { Routes } from './Routes'
+import styled from 'styled-components'
 
 const App: React.FC = () => {
   return (
@@ -23,15 +20,13 @@ const App: React.FC = () => {
       </Helmet>
       <GlobalStyle />
       <Header />
-      <main>
-        <Switch>
-          <Route path="/" component={List} exact />
-          <Route path="/user/:name" component={User} exact />
-          <Route path="*" component={NoMatch} exact />
-        </Switch>
-      </main>
+      <Main>
+        <Routes />
+      </Main>
     </>
   )
 }
+
+const Main = styled.main``
 
 export default App

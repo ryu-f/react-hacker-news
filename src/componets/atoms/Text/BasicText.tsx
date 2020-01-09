@@ -11,10 +11,10 @@ type BasicTextProps = BaseProps
 // jsx
 ////////////////////////////////////////////////////////////
 export const BasicText: React.FC<BasicTextProps> = props => {
-  const { size, textColor, children } = props
+  const { size, textcolor, children } = props
 
   return (
-    <BasicView size={size} textColor={textColor} {...props}>
+    <BasicView size={size} textcolor={textcolor} {...props}>
       {children}
     </BasicView>
   )

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 export const NoMatch: React.FC = () => (
   <PageWrapper>
-    <BasicText size="BASE" textColor="BLACK">
+    <BasicText size="BASE" textcolor="BLACK">
       Not Found
     </BasicText>
   </PageWrapper>

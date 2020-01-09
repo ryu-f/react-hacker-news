@@ -14,10 +14,10 @@ export interface AnchorButtonProps
 // jsx
 ////////////////////////////////////////////////////////////
 export const AnchorButton: React.FC<AnchorButtonProps> = props => {
-  const { href, size, textColor, children } = props
+  const { href, size, textcolor, children } = props
 
   return (
-    <AnchorView href={href} size={size} textColor={textColor} {...props}>
+    <AnchorView href={href} size={size} textcolor={textcolor} {...props}>
       {children}
     </AnchorView>
   )

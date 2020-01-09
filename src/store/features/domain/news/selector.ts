@@ -1,9 +1,6 @@
 import { useMemo, useState } from 'react'
 
 import { NewsState } from './slice'
-import { RootState } from '@/store/rootReducer'
-
-export const getNews = (state: RootState) => state.news
 
 export const useExtractingFeedItem = (feedItem: NewsState['feedItem']) => {
   const [rangeFeedItem, sliceFeedItem] = useState<NewsState['feedItem']>([])

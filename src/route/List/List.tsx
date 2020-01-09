@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 
 import FeedCardList from '@/componets/organisms/FeedCardList'
 import { newsInitialize } from '@/store/features/domain/news/operations'
+import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 
 export const List: React.FC = () => {
@@ -12,8 +13,13 @@ export const List: React.FC = () => {
   }, [])
 
   return (
-    <div>
+    <PageWrapper>
       <FeedCardList />
-    </div>
+    </PageWrapper>
   )
 }
+
+const PageWrapper = styled.div`
+  width: 100%;
+  padding: 80px 40px;
+`

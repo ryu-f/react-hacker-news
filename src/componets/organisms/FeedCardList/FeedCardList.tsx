@@ -25,7 +25,6 @@ const LayoutGrid = styled.ul`
   ${media.desktop`
     grid-template-columns: repeat(auto-fit, 300px);
     justify-content: center;
-    padding: 80px 50px;
     grid-gap: 20px;
   `}
 `

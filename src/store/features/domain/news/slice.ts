@@ -1,6 +1,8 @@
 import { FeedItem, Feeds } from '@/types/domain/hn'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
+// types
+////////////////////////////////////////////////////////////
 export type NewsState = {
   types: Feeds[]
   selectedType: string
@@ -12,6 +14,8 @@ type GetFeedItem = NewsState['feedItem']
 
 type SelectFeedType = NewsState['selectedType']
 
+// initial state
+////////////////////////////////////////////////////////////
 const initialState: NewsState = {
   types: ['news', 'newest', 'ask', 'show', 'jobs'],
   selectedType: 'news',
@@ -19,6 +23,8 @@ const initialState: NewsState = {
   paging: 1
 }
 
+// slice
+////////////////////////////////////////////////////////////
 export const slice = createSlice({
   name: 'news',
   initialState,
@@ -32,6 +38,8 @@ export const slice = createSlice({
   }
 })
 
+// exports
+////////////////////////////////////////////////////////////
 export const { actions: newsActions } = slice
 
 export default slice.reducer

@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
       <LayoutList>
         {types.map((type, i) => (
           <LayoutItem key={`item-${i}`} onClick={() => itemOnClick(type)}>
-            <BasicText size={'BASE'} textColor={'WHITE'}>
+            <BasicText size={'BASE'} textcolor={'WHITE'}>
               {type}
             </BasicText>
           </LayoutItem>

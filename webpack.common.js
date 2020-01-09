@@ -6,7 +6,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 /** @type import('webpack').Configuration */
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/main.tsx',
 
   output: {
     path: path.resolve(__dirname, 'dist'),

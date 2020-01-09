@@ -13,10 +13,10 @@ export interface BasicButtonProps extends BaseProps, React.ButtonHTMLAttributes<
 // jsx
 ////////////////////////////////////////////////////////////
 export const BasicButton: React.FC<BasicButtonProps> = props => {
-  const { size, textColor, children } = props
+  const { size, textcolor, children } = props
 
   return (
-    <BasicView size={size} textColor={textColor} {...props}>
+    <BasicView size={size} textcolor={textcolor} {...props}>
       {children}
     </BasicView>
   )

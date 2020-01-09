@@ -10,10 +10,10 @@ type BaloonTextProps = BaseProps
 // jsx
 ////////////////////////////////////////////////////////////
 export const BaloonText: React.FC<BaloonTextProps> = props => {
-  const { size, textColor, children } = props
+  const { size, textcolor, children } = props
 
   return (
-    <BaloonView size={size} textColor={textColor} {...props}>
+    <BaloonView size={size} textcolor={textcolor} {...props}>
       {children}
     </BaloonView>
   )

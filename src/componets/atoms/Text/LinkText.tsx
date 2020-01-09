@@ -13,10 +13,10 @@ interface LinkTextProps extends BaseProps, LinkProps {
 // jsx
 ////////////////////////////////////////////////////////////
 export const LinkText: React.FC<LinkTextProps> = props => {
-  const { to, size, textColor, children } = props
+  const { to, size, textcolor, children } = props
 
   return (
-    <LinkView to={to} size={size} textColor={textColor} {...props}>
+    <LinkView to={to} size={size} textcolor={textcolor} {...props}>
       {children}
     </LinkView>
   )

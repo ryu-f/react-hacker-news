@@ -12,7 +12,7 @@ type Props = {
 
 export const FeedCard: React.FC<Props> = ({ feed }) => (
   <Wrapper>
-    <TitleText size="BASE" textColor="BLACK">
+    <TitleText size="BASE" textcolor="BLACK">
       {feed.title}
     </TitleText>
     {feed.user ? (
@@ -20,10 +20,10 @@ export const FeedCard: React.FC<Props> = ({ feed }) => (
         <LayoutPersonIcon>
           <SvgIcons id={'person'} />
         </LayoutPersonIcon>
-        <BasicText size="SMALL" textColor="BLACK">
+        <BasicText size="SMALL" textcolor="BLACK">
           by&nbsp;
         </BasicText>
-        <UserText to={`/user/${feed.user}`} size="SMALL" textColor="GLAY">
+        <UserText to={`/user/${feed.user}`} size="SMALL" textcolor="GLAY">
           {feed.user}
         </UserText>
       </LayoutPerson>
@@ -33,12 +33,12 @@ export const FeedCard: React.FC<Props> = ({ feed }) => (
         <LayoutPersonIcon>
           <SvgIcons id={'clock'} />
         </LayoutPersonIcon>
-        <BasicText size="SMALL" textColor="GLAY">
+        <BasicText size="SMALL" textcolor="GLAY">
           {feed.time_ago}
         </BasicText>
       </LayoutTime>
       {feed.comments_count > 0 && (
-        <CommentsCount size="SMALL" textColor="BLACK">
+        <CommentsCount size="SMALL" textcolor="BLACK">
           {feed.comments_count}
         </CommentsCount>
       )}
