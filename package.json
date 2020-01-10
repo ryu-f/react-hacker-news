@@ -115,7 +115,7 @@
     "stylelint-order": "4.0.0",
     "stylelint-processor-styled-components": "1.9.0",
     "svg-sprite-generator": "0.0.7",
-    "terser": "4.5.1",
+    "terser": "4.6.2",
     "terser-webpack-plugin": "2.3.1",
     "ts-jest": "24.2.0",
     "typescript": "3.7.4",
