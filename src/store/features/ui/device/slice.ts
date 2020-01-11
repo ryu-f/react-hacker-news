@@ -2,17 +2,17 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 // types
 ////////////////////////////////////////////////////////////
-export type DeviceState = {
+export type State = {
   device: 'desktop' | 'tablet' | 'mobile'
 }
 
 type SetDevice = {
-  device: DeviceState['device']
+  device: State['device']
 }
 
 // initial state
 ////////////////////////////////////////////////////////////
-const initialState: DeviceState = {
+const initialState: State = {
   device: 'desktop'
 }
 
@@ -30,6 +30,6 @@ export const slice = createSlice({
 
 // exports
 ////////////////////////////////////////////////////////////
-export const { setDevice } = slice.actions
+export const { actions: deviceActions } = slice
 
 export default slice.reducer

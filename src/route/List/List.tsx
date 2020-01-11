@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import FeedCardList from '@/componets/organisms/FeedCardList'
-import { newsInitialize } from '@/store/features/domain/news/operations'
+import { newsOperations } from '@/store/features/domain/news'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 
@@ -9,7 +9,7 @@ export const List: React.FC = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(newsInitialize())
+    dispatch(newsOperations.newsInitialize())
   }, [])
 
   return (

@@ -1,9 +1,9 @@
 import { useMemo, useState } from 'react'
 
-import { NewsState } from './slice'
+import { State } from './slice'
 
-export const useExtractingFeedItem = (feedItem: NewsState['feedItem']) => {
-  const [rangeFeedItem, sliceFeedItem] = useState<NewsState['feedItem']>([])
+export const useExtractingFeedItem = (feedItem: State['feedItem']) => {
+  const [rangeFeedItem, sliceFeedItem] = useState<State['feedItem']>([])
   const DISPLAY_LIMIT = 15
 
   useMemo(() => {

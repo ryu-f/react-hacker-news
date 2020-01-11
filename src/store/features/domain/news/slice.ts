@@ -3,20 +3,20 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 // types
 ////////////////////////////////////////////////////////////
-export type NewsState = {
+export type State = {
   types: Feeds[]
   selectedType: string
   feedItem: FeedItem[]
   paging: number
 }
 
-type GetFeedItem = NewsState['feedItem']
+type GetFeedItem = State['feedItem']
 
-type SelectFeedType = NewsState['selectedType']
+type SelectFeedType = State['selectedType']
 
 // initial state
 ////////////////////////////////////////////////////////////
-const initialState: NewsState = {
+const initialState: State = {
   types: ['news', 'newest', 'ask', 'show', 'jobs'],
   selectedType: 'news',
   feedItem: [],
