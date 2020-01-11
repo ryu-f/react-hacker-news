@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-export const Reset = css`
+export const reset = css`
   *,
   *::before,
   *::after {

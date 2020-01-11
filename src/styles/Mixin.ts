@@ -1,4 +1,4 @@
-import { BREAK_POINT } from './Constants'
+import { BREAK_POINT } from './constants'
 import { css, Interpolation } from 'styled-components'
 
 const mediaQuery = {

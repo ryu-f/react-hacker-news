@@ -1,8 +1,8 @@
-import { Base } from './Base'
-import { Reset } from './Reset'
+import { base } from './base'
+import { reset } from './reset'
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  ${Reset}
-  ${Base}
+  ${reset}
+  ${base}
 `
