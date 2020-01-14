@@ -7,8 +7,6 @@
     "dev": "run-s sprite:svg _webpack:dev",
     "debug": "cross-env DEBUG_ENV=enable webpack-dev-server --mode development",
     "build": "run-s sprite:svg del:dist copy:static _webpack:production",
-    "_webpack:dev": "webpack-dev-server --config webpack.dev.js",
-    "_webpack:production": "webpack --config webpack.prod.js",
     "commit": "commit",
     "lint:ts": "eslint --fix \"**/*.ts{,x}\"",
     "lint:css": "stylelint \"**/*.ts{,x}\"",
@@ -23,7 +21,10 @@
     "copy:static": "cpx \"./src/static/**/*\" \"./dist\"",
     "del:dist": "rimraf \"./dist\"",
     "sort:import": "import-sort --write \"**/*.ts{,x}\"",
-    "sprite:svg": "svg-sprite-generate -d ./material/sprite -o ./src/static/img/icon/icons.svg"
+    "sprite:svg": "svg-sprite-generate -d ./material/sprite -o ./src/static/img/icon/icons.svg",
+    "postinstall": "rm -rf node_modules/@types/react-native",
+    "_webpack:dev": "webpack-dev-server --config webpack.dev.js",
+    "_webpack:production": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
