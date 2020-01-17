@@ -2,44 +2,46 @@ import * as React from 'react'
 
 import { BaloonText, BasicText, LinkText } from '@/componets/atoms/Text'
 
-import { FeedItem } from '@/types/domain/hn'
 import { SvgIcons } from '@/componets/atoms/SvgIcons'
 import styled from 'styled-components'
 
 type Props = {
-  feed: FeedItem
+  title: string
+  user?: string | null
+  time: string
+  comments?: number
 }
 
-export const FeedCard: React.FC<Props> = ({ feed }) => (
+export const FeedCard: React.FC<Props> = ({ title, user, time, comments }) => (
   <Wrapper>
     <TitleText size="BASE" textcolor="BLACK">
-      {feed.title}
+      {title}
     </TitleText>
-    {feed.user ? (
+    {user ? (
       <LayoutPerson>
         <LayoutPersonIcon>
-          <SvgIcons id={'person'} />
+          <SvgIcons id="person" />
         </LayoutPersonIcon>
         <BasicText size="SMALL" textcolor="BLACK">
           by&nbsp;
         </BasicText>
-        <UserText to={`/user/${feed.user}`} size="SMALL" textcolor="GLAY">
-          {feed.user}
+        <UserText to={`/user/${user}`} size="SMALL" textcolor="GLAY">
+          {user}
         </UserText>
       </LayoutPerson>
     ) : null}
     <FootArea>
       <LayoutTime>
         <LayoutPersonIcon>
-          <SvgIcons id={'clock'} />
+          <SvgIcons id="clock" />
         </LayoutPersonIcon>
         <BasicText size="SMALL" textcolor="GLAY">
-          {feed.time_ago}
+          {time}
         </BasicText>
       </LayoutTime>
-      {feed.comments_count > 0 && (
+      {comments && comments > 0 && (
         <CommentsCount size="SMALL" textcolor="BLACK">
-          {feed.comments_count}
+          {comments}
         </CommentsCount>
       )}
     </FootArea>

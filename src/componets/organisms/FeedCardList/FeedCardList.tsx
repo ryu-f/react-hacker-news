@@ -13,7 +13,12 @@ export const FeedCardList: React.FC = () => {
     <LayoutGrid>
       {feedItem.map((card, i) => (
         <LayoutItem key={`card-${i}`}>
-          <FeedCard feed={card} />
+          <FeedCard
+            title={card.title}
+            user={card.user}
+            time={card.time_ago}
+            comments={card.comments_count}
+          />
         </LayoutItem>
       ))}
     </LayoutGrid>
