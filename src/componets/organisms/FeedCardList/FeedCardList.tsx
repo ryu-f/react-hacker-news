@@ -5,24 +5,31 @@ import { RootState } from '@/store/rootReducer'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
+import { FeedItem } from '@/types/domain/hn'
 
-export const FeedCardList: React.FC = () => {
+type Props = {
+  feedItem: FeedItem[]
+}
+
+const View: React.FC<Props> = ({ feedItem }) => (
+  <LayoutGrid>
+    {feedItem.map((card, i) => (
+      <li key={`card-${i}`}>
+        <FeedCard
+          title={card.title}
+          user={card.user}
+          time={card.time_ago}
+          comments={card.comments_count}
+        />
+      </li>
+    ))}
+  </LayoutGrid>
+)
+
+export const Container: React.FC = () => {
   const { feedItem } = useSelector((state: RootState) => state.news)
 
-  return (
-    <LayoutGrid>
-      {feedItem.map((card, i) => (
-        <LayoutItem key={`card-${i}`}>
-          <FeedCard
-            title={card.title}
-            user={card.user}
-            time={card.time_ago}
-            comments={card.comments_count}
-          />
-        </LayoutItem>
-      ))}
-    </LayoutGrid>
-  )
+  return <View feedItem={feedItem} />
 }
 
 const LayoutGrid = styled.ul`
@@ -33,5 +40,3 @@ const LayoutGrid = styled.ul`
     grid-gap: 20px;
   `}
 `
-
-const LayoutItem = styled.li``

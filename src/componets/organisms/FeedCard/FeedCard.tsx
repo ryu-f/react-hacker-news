@@ -12,7 +12,7 @@ type Props = {
   comments?: number
 }
 
-export const FeedCard: React.FC<Props> = ({ title, user, time, comments }) => (
+export const View: React.FC<Props> = ({ title, user, time, comments }) => (
   <Wrapper>
     <TitleText size="BASE" textcolor="BLACK">
       {title}

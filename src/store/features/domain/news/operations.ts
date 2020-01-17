@@ -1,6 +1,7 @@
 import { AppThunk } from '@/store/configureStore'
 import getFeed from '@/services/hn/getFeed'
 import { newsActions } from './slice'
+import { batch } from 'react-redux'
 
 /**
  * get api response & diapatch
@@ -27,8 +28,10 @@ const searchPageParam = (types: string[]) => {
 }
 
 export const selectFeedType = (type: string): AppThunk => dispatch => {
-  dispatch(newsActions.selectFeedType(type))
-  dispatch(fetchFeedItem())
+  batch(() => {
+    dispatch(newsActions.selectFeedType(type))
+    dispatch(fetchFeedItem())
+  })
 }
 
 /**

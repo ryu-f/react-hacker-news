@@ -6,31 +6,39 @@ import { RootState } from '@/store/rootReducer'
 import { media } from '@/styles/Mixin'
 import { newsOperations } from '@/store/features/domain/news'
 import styled from 'styled-components'
+import { Feeds } from '@/types/domain/hn'
 
-export const Header: React.FC = () => {
+type Props = {
+  types: Feeds[]
+  onClick: (selected: string) => void
+}
+
+const View: React.FC<Props> = ({ types, onClick }) => (
+  <LayoutWrapper>
+    <LayoutList>
+      {types.map((type, i) => (
+        <LayoutItem key={`item-${i}`} onClick={() => onClick(type)}>
+          <BasicText size={'BASE'} textcolor={'WHITE'}>
+            {type}
+          </BasicText>
+        </LayoutItem>
+      ))}
+    </LayoutList>
+  </LayoutWrapper>
+)
+
+export const Container: React.FC = () => {
   const dispatch = useDispatch()
   const { types } = useSelector((state: RootState) => state.news)
 
-  const itemOnClick = useCallback(
+  const onClick = useCallback(
     (selected: string) => {
       dispatch(newsOperations.selectFeedType(selected))
     },
     [dispatch]
   )
 
-  return (
-    <LayoutWrapper>
-      <LayoutList>
-        {types.map((type, i) => (
-          <LayoutItem key={`item-${i}`} onClick={() => itemOnClick(type)}>
-            <BasicText size={'BASE'} textcolor={'WHITE'}>
-              {type}
-            </BasicText>
-          </LayoutItem>
-        ))}
-      </LayoutList>
-    </LayoutWrapper>
-  )
+  return <View types={types} onClick={onClick} />
 }
 
 const LayoutWrapper = styled.nav`
