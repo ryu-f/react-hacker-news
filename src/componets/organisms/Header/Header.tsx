@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { BasicText } from '@/componets/atoms/Text'
@@ -38,7 +38,9 @@ export const Container: React.FC = () => {
     [dispatch]
   )
 
-  return <View types={types} onClick={onClick} />
+  return useMemo(() => {
+    return <View types={types} onClick={onClick} />
+  }, [types, onClick])
 }
 
 const LayoutWrapper = styled.nav`

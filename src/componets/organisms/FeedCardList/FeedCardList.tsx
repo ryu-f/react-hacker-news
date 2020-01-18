@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useMemo } from 'react'
 
 import FeedCard from '@/componets/organisms/FeedCard'
 import { RootState } from '@/store/rootReducer'
@@ -29,7 +29,9 @@ const View: React.FC<Props> = ({ feedItem }) => (
 export const Container: React.FC = () => {
   const { feedItem } = useSelector((state: RootState) => state.news)
 
-  return <View feedItem={feedItem} />
+  return useMemo(() => {
+    return <View feedItem={feedItem} />
+  }, [feedItem])
 }
 
 const LayoutGrid = styled.ul`
