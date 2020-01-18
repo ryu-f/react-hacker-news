@@ -109,7 +109,7 @@
     "react-hot-loader": "4.12.18",
     "rimraf": "3.0.0",
     "stylelint": "13.0.0",
-    "stylelint-config-prettier": "8.0.0",
+    "stylelint-config-prettier": "8.0.1",
     "stylelint-config-recess-order": "2.0.3",
     "stylelint-config-standard": "19.0.0",
     "stylelint-config-styled-components": "0.1.1",
