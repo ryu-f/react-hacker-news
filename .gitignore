@@ -8,3 +8,10 @@ npm-debug.log
 dist
 
 .env
+
+# unit coverrage dist
+__tests__/unit/coverage
+
+# e2e capture dist
+__tests__/e2e/__snapshots__/*
+!__tests__/e2e/__snapshots__/.gitkeep

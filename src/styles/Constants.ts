@@ -8,9 +8,27 @@ export const FONT_SIZE = {
 }
 
 /**
- * COLOR
+ * Text color
  */
 export const COLOR = {
-  BLACK: '#000',
-  WHITE: '#fff'
+  BLACK: 'rgb(0,0,0)',
+  WHITE: 'rgb(255, 255, 255)',
+  GLAY: 'rgba(0,0,0,0.54)'
+}
+
+/**
+ * Backgruond color
+ */
+export const BACKGROUND_COLOR = {
+  WHITE: 'rgb(255, 255, 255)',
+  GLAY: 'rgb(238, 238, 238)'
+}
+
+/**
+ * break point
+ */
+
+export const BREAK_POINT = {
+  MOBILE: 750,
+  TABLET: 1024
 }
