@@ -106,7 +106,7 @@
     "progress-bar-webpack-plugin": "2.1.0",
     "puppeteer": "2.0.0",
     "react-docgen-typescript-loader": "3.6.0",
-    "react-hot-loader": "4.12.18",
+    "react-hot-loader": "4.12.19",
     "rimraf": "3.0.0",
     "stylelint": "13.0.0",
     "stylelint-config-prettier": "8.0.1",
