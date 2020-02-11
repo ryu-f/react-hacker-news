@@ -14,7 +14,7 @@ const App: React.FC = () => {
         <title>React Hacker News</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
-          href="https://fonts.googleapis.com/css?family=Oswald+Roboto&display=swap"
+          href="https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap"
           rel="stylesheet"
         />
       </Helmet>
