@@ -96,5 +96,6 @@ const LayoutTime = styled.div`
 `
 
 const CommentsCount = styled(BaloonText)`
+  margin-left: 10px;
   line-height: 1;
 `

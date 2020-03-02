@@ -1,38 +1,30 @@
 import React, { useMemo } from 'react'
 
 import FeedCard from '@/componets/organisms/FeedCard'
+import { FeedItem } from '@/types/domain/hn'
 import { RootState } from '@/store/rootReducer'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
-import { FeedItem } from '@/types/domain/hn'
-import { useTransition, animated } from 'react-spring'
 
 type Props = {
   feedItem: FeedItem[]
 }
 
-const View: React.FC<Props> = ({ feedItem }) => {
-  const transitios = useTransition(feedItem, item => item.id, {
-    from: { opacity: 0 },
-    enter: { opacity: 0 }
-  })
-
-  return (
-    <LayoutGrid>
-      {transitios.map(({ key, item }) => (
-        <animated.li key={key}>
-          <FeedCard
-            title={item.title}
-            user={item.user}
-            time={item.time_ago}
-            comments={item.comments_count}
-          />
-        </animated.li>
-      ))}
-    </LayoutGrid>
-  )
-}
+const View: React.FC<Props> = ({ feedItem }) => (
+  <LayoutGrid>
+    {feedItem.map((card, i) => (
+      <li key={`card-${i}`}>
+        <FeedCard
+          title={card.title}
+          user={card.user}
+          time={card.time_ago}
+          comments={card.comments_count}
+        />
+      </li>
+    ))}
+  </LayoutGrid>
+)
 
 export const Container: React.FC = () => {
   const { feedItem } = useSelector((state: RootState) => state.news)

@@ -32,7 +32,7 @@ const triangle = css`
 
 const BaloonView = styled(BaseStyle)`
   position: relative;
-  padding: 4px;
+  padding: 3px;
   border: 1px solid #000;
   border-radius: 5px;
 
