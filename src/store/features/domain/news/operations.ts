@@ -1,7 +1,7 @@
 import { AppThunk } from '@/store/configureStore'
+import { batch } from 'react-redux'
 import getFeed from '@/services/hn/getFeed'
 import { newsActions } from './slice'
-import { batch } from 'react-redux'
 
 /**
  * get api response & diapatch

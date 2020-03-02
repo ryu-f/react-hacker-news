@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react'
+import { shallowEqual, useSelector } from 'react-redux'
 
 import FeedCard from '@/componets/organisms/FeedCard'
 import { FeedItem } from '@/types/domain/hn'
+import React from 'react'
 import { RootState } from '@/store/rootReducer'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
-import { useSelector } from 'react-redux'
 
 type Props = {
   feedItem: FeedItem[]
@@ -27,11 +27,9 @@ const View: React.FC<Props> = ({ feedItem }) => (
 )
 
 export const Container: React.FC = () => {
-  const { feedItem } = useSelector((state: RootState) => state.news)
+  const { feedItem } = useSelector((state: RootState) => state.news, shallowEqual)
 
-  return useMemo(() => {
-    return <View feedItem={feedItem} />
-  }, [feedItem])
+  return <View feedItem={feedItem} />
 }
 
 const LayoutGrid = styled.ul`

@@ -1,6 +1,7 @@
-import * as newsSelectors from './selector'
 import * as newsOperations from './operations'
-import reducer, { newsActions, State } from './slice'
+import * as newsSelectors from './selector'
+
+import reducer, { State, newsActions } from './slice'
 
 export { newsSelectors, newsOperations, newsActions }
 export default reducer

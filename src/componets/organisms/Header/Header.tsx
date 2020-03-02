@@ -2,11 +2,11 @@ import React, { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { BasicText } from '@/componets/atoms/Text'
+import { Feeds } from '@/types/domain/hn'
 import { RootState } from '@/store/rootReducer'
 import { media } from '@/styles/Mixin'
 import { newsOperations } from '@/store/features/domain/news'
 import styled from 'styled-components'
-import { Feeds } from '@/types/domain/hn'
 
 type Props = {
   types: Feeds[]
