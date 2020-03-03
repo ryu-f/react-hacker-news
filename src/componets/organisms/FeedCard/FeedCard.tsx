@@ -9,7 +9,7 @@ type Props = {
   title: string
   user?: string | null
   time: string
-  comments?: number
+  comments: number
 }
 
 export const View: React.FC<Props> = ({ title, user, time, comments }) => (
@@ -17,7 +17,7 @@ export const View: React.FC<Props> = ({ title, user, time, comments }) => (
     <TitleText size="BASE" textcolor="BLACK">
       {title}
     </TitleText>
-    {user ? (
+    {user && (
       <LayoutPerson>
         <LayoutPersonIcon>
           <SvgIcons id="person" />
@@ -29,7 +29,7 @@ export const View: React.FC<Props> = ({ title, user, time, comments }) => (
           {user}
         </UserText>
       </LayoutPerson>
-    ) : null}
+    )}
     <FootArea>
       <LayoutTime>
         <LayoutPersonIcon>
@@ -39,7 +39,7 @@ export const View: React.FC<Props> = ({ title, user, time, comments }) => (
           {time}
         </BasicText>
       </LayoutTime>
-      {comments && comments > 0 && (
+      {comments > 0 && (
         <CommentsCount size="SMALL" textcolor="BLACK">
           {comments}
         </CommentsCount>
