@@ -1,7 +1,7 @@
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { shallowEqual, useSelector } from 'react-redux'
 
-import FeedCard from '@/componets/organisms/FeedCard'
+import { FeedCard } from '@/componets/organisms/FeedCard'
 import { FeedItem } from '@/types/domain/hn'
 import React from 'react'
 import { RootState } from '@/store/rootReducer'
@@ -35,7 +35,7 @@ const View: React.FC<Props> = ({ feedItem }) => {
   )
 }
 
-export const Container: React.FC = () => {
+export const FeedCardList: React.FC = () => {
   const { feedItem } = useSelector((state: RootState) => state.news, shallowEqual)
 
   return <View feedItem={feedItem} />

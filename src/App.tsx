@@ -1,12 +1,12 @@
 import * as React from 'react'
 
 import { GlobalStyle } from './styles'
-import Header from '@/componets/organisms/Header'
+import { Header } from '@/componets/organisms/Header'
 import { Helmet } from 'react-helmet'
 import { Routes } from './Routes'
 import styled from 'styled-components'
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <>
       <Helmet>
@@ -28,5 +28,3 @@ const App: React.FC = () => {
 }
 
 const Main = styled.main``
-
-export default App

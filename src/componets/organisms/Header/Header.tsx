@@ -27,7 +27,7 @@ const View: React.FC<Props> = ({ types, onClick }) => (
   </LayoutWrapper>
 )
 
-export const Container: React.FC = () => {
+export const Header: React.FC = () => {
   const dispatch = useDispatch()
   const { types } = useSelector((state: RootState) => state.news)
 

@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import store, { history } from './store/configureStore'
 
-import App from './App'
+import { App } from './App'
 import { ConnectedRouter } from 'connected-react-router'
 import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'

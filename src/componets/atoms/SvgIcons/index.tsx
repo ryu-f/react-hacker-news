@@ -1,1 +1,1 @@
-export * from './SvgIcons'
+export { SvgIcons } from './SvgIcons'

@@ -1,3 +1,1 @@
-import { View as FeedCard } from './FeedCard'
-
-export default FeedCard
+export { FeedCard } from './FeedCard'

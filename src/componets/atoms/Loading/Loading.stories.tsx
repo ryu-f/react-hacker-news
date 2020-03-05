@@ -1,12 +1,12 @@
 import * as React from 'react'
 
-import { LoadingEffect } from './'
+import { Loading } from './'
 
 export default {
   title: 'Atom|LoadingEffect',
   parameters: {
-    component: LoadingEffect
+    component: Loading
   }
 }
 
-export const story1 = () => <LoadingEffect />
+export const story1 = () => <Loading />

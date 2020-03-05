@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import styled from 'styled-components'
 
-export const LoadingEffect: React.FC = () => <View />
+export const Loading: React.FC = () => <View />
 
 const View = styled.span`
   width: 1em;

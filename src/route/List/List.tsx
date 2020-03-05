@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import FeedCardList from '@/componets/organisms/FeedCardList'
+import { FeedCardList } from '@/componets/organisms/FeedCardList'
 import { newsOperations } from '@/store/features/domain/news'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'

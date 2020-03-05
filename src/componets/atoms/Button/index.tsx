@@ -1,3 +1,3 @@
-export { BasicButtonProps, BasicButton } from './BasicButton'
-export { AnchorButtonProps, AnchorButton } from './AnchorButton'
-export { LinkButtonProps, LinkButton } from './LinkButton'
+export { BasicButton } from './BasicButton'
+export { AnchorButton } from './AnchorButton'
+export { LinkButton } from './LinkButton'
