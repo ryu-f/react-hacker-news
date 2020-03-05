@@ -3,7 +3,6 @@ import rootReducer, { RootState } from './rootReducer'
 
 import { ThunkAction } from 'redux-thunk'
 import { createBrowserHistory } from 'history'
-import logger from 'redux-logger'
 import { routerMiddleware } from 'connected-react-router'
 
 export const history = createBrowserHistory()
@@ -15,7 +14,8 @@ if (env !== 'production') {
   middlewares.push(
     ...getDefaultMiddleware({ thunk: true, immutableCheck: true, serializableCheck: true })
   )
-  middlewares.push(logger)
+} else {
+  middlewares.push(...getDefaultMiddleware())
 }
 
 middlewares.push(routerMiddleware(history))
