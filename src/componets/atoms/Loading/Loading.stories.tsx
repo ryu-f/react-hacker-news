@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Loading } from './'
 
 export default {
-  title: 'Atom|LoadingEffect',
+  title: 'Atom|Loading',
   parameters: {
     component: Loading
   }
