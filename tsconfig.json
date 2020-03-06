@@ -20,6 +20,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": "./",
+    "rootDirs": ["src", "stories"],
     "outDir": "./dist",
     "paths": {
       "@/*": ["src/*"],

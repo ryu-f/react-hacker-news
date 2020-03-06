@@ -1,4 +1,4 @@
-import { COLOR, FONT_SIZE } from '@/styles/constants'
+import { COLOR, FONT_SIZE } from '@/styles/Constants'
 
 import styled from 'styled-components'
 
