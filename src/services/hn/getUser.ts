@@ -1,7 +1,7 @@
-import KY from '@/services/KY'
+import { API } from '@/services/API'
 import { User } from '@/types/domain/hn'
 
 export default ({ name }: { name: string }) => {
   const url = `user/${name}.json`
-  return KY.get(url).json<User>()
+  return API<User>(url)
 }

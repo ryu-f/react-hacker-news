@@ -9664,11 +9664,6 @@ known-css-properties@^0.18.0:
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.18.0.tgz#d6e00b56ee1d5b0d171fd86df1583cfb012c521f"
   integrity sha512-69AgJ1rQa7VvUsd2kpvVq+VeObDuo3zrj0CzM5Slmf6yduQFAI2kXPDQJR2IE/u6MSAUOJrwSzjg5vlz8qcMiw==
 
-ky@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/ky/-/ky-0.17.0.tgz#c1c464bd5e88217fb75ccadcee146497a8ea2f13"
-  integrity sha512-WSDBoSr9IWJOJOIGdsVbngyFrbAkCE3Nvwa4KLF77jWiKVm2zpMUQKSqaq6bZ/4V3ez8F2ggKDMaKXnteZY+ag==
-
 lazy-cache@^0.2.3:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-0.2.7.tgz#7feddf2dcb6edb77d11ef1d117ab5ffdf0ab1b65"

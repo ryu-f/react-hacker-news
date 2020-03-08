@@ -1,5 +1,5 @@
+import { API } from '@/services/API'
 import { FeedItem } from '@/types/domain/hn'
-import KY from '@/services/KY'
 
 type Parameter = {
   type: string
@@ -8,5 +8,5 @@ type Parameter = {
 
 export default ({ type, paging }: Parameter) => {
   const url = `${type}/${paging}.json`
-  return KY.get(url).json<FeedItem[]>()
+  return API<FeedItem[]>(url)
 }
