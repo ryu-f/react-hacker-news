@@ -1,6 +1,6 @@
 import { Interpolation, css } from 'styled-components'
 
-import { BREAK_POINT } from './constants'
+import { BREAK_POINT } from './Constants'
 
 const mediaQuery = {
   desktop: `min-width:${BREAK_POINT.TABLET + 1}px`,

@@ -1,4 +1,4 @@
-import { BACKGROUND_COLOR } from './constants'
+import { BACKGROUND_COLOR } from './Constants'
 import { css } from 'styled-components'
 
 export const base = css`
