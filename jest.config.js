@@ -5,7 +5,8 @@ module.exports = {
   moduleNameMapper: { '^@/(.*)$': '<rootDir>/src/$1' },
   coverageDirectory: '__tests__/unit/coverage',
   collectCoverageFrom: ['src/**/*.tsx'],
-  coverageReporters: ['html', 'text-summary'],
+  coveragePathIgnorePatterns: ['.stories.tsx'],
+  coverageReporters: ['html'],
   preset: 'ts-jest',
   globals: {
     'ts-jest': {

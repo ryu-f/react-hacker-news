@@ -1,13 +1,10 @@
 import * as React from 'react'
 
 import { BasicText } from './'
-import { withInfo } from '@storybook/addon-info'
 
 export default {
-  title: 'Atom|Text',
-  parameters: {
-    component: Text
-  }
+  title: 'atoms|Text',
+  component: Text
 }
 
 export const basic = () => (
@@ -15,6 +12,3 @@ export const basic = () => (
     test
   </BasicText>
 )
-basic.story = {
-  decorators: [withInfo({ inline: true })]
-}

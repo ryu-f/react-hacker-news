@@ -1,20 +1,15 @@
 import * as React from 'react'
 
 import { BasicButton } from './'
-import { withInfo } from '@storybook/addon-info'
+import { action } from '@storybook/addon-actions'
 
 export default {
-  title: 'Atom|Button',
-  parameters: {
-    component: BasicButton
-  }
+  title: 'atoms|Button',
+  component: BasicButton
 }
 
 export const basic = () => (
-  <BasicButton size={'BASE'} textcolor={'BLACK'}>
+  <BasicButton onClick={action('onClick')} size={'BASE'} textcolor={'BLACK'}>
     test
   </BasicButton>
 )
-basic.story = {
-  decorators: [withInfo({ inline: true })]
-}

@@ -29,6 +29,7 @@ module.exports = {
     '@storybook/addon-knobs',
     '@storybook/addon-backgrounds',
     '@storybook/addon-a11y',
-    '@storybook/addon-jest'
+    '@storybook/addon-jest',
+    '@storybook/addon-storysource'
   ]
 }
