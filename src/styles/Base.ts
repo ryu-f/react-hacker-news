@@ -1,7 +1,7 @@
 import { BACKGROUND_COLOR } from './Constants'
 import { css } from 'styled-components'
 
-export const base = css`
+export const Base = css`
   * {
     box-sizing: border-box;
   }
