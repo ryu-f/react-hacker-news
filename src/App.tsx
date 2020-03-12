@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { GlobalStyle } from './styles'
-import { Header } from '@/componets/organisms/Header'
+import { HeaderContainer } from '@/containers/HeaderContainer'
 import { Helmet } from 'react-helmet'
 import { Routes } from './Routes'
 import styled from 'styled-components'
@@ -19,7 +19,7 @@ export const App: React.FC = () => {
         />
       </Helmet>
       <GlobalStyle />
-      <Header />
+      <HeaderContainer />
       <Main>
         <Routes />
       </Main>

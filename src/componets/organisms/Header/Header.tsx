@@ -1,11 +1,7 @@
-import React, { useCallback, useMemo } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
 import { BasicText } from '@/componets/atoms/Text'
 import { Feeds } from '@/types/domain/hn'
-import { RootState } from '@/store/rootReducer'
+import React from 'react'
 import { media } from '@/styles/Mixin'
-import { newsOperations } from '@/store/features/domain/news'
 import styled from 'styled-components'
 
 type Props = {
@@ -13,7 +9,7 @@ type Props = {
   onClick: (selected: string) => void
 }
 
-const View: React.FC<Props> = ({ types, onClick }) => (
+export const Header: React.FC<Props> = ({ types, onClick }) => (
   <LayoutWrapper>
     <LayoutList>
       {types.map((type, i) => (
@@ -26,22 +22,6 @@ const View: React.FC<Props> = ({ types, onClick }) => (
     </LayoutList>
   </LayoutWrapper>
 )
-
-export const Header: React.FC = () => {
-  const dispatch = useDispatch()
-  const { types } = useSelector((state: RootState) => state.news)
-
-  const onClick = useCallback(
-    (selected: string) => {
-      dispatch(newsOperations.selectFeedType(selected))
-    },
-    [dispatch]
-  )
-
-  return useMemo(() => {
-    return <View types={types} onClick={onClick} />
-  }, [types, onClick])
-}
 
 const LayoutWrapper = styled.nav`
   display: flex;
